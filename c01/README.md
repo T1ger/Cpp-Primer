@@ -79,3 +79,7 @@ Illegal.
 ## Exercise 1.8
 
 ## [Exercise 1.9](ex1_9.cpp)
+
+## [Exercise 1.10](ex1_10.cpp)
+
+## [Exercise 1.11](ex1_11.cpp)

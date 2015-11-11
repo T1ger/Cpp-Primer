@@ -15,3 +15,14 @@
 	$ ./ex1_1
 	$ echo $?
 	255
+
+## Exercise 1.3
+
+> Write a program to print _Hello, World_ on the standard output.
+
+#### Mac
+
+	$ g++ -o exe1_3 ex1_3.cpp
+	$ ./ex1_3
+	Hello, World
+

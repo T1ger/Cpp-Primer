@@ -44,3 +44,38 @@
     	return 0;
 	}
 
+## Exercise 1.5
+
+> We wrote the output in one large statement. Rewrite the program to use a separate statement to print each operand.
+
+	#include <iostream>
+
+	int main() 
+	{
+	    std::cout << "Enter two numbers:" << std::endl;
+	    int v1 = 0, v2 = 0;
+	    std::cin >> v1 >> v2;
+	    std::cout << "The product of ";
+	    std::cout << v1;
+	    std::cout << " and "; 
+	    std::cout << v2;
+	    std::cout << " is ";
+	    std::cout << v1 * v2; 
+	    std::cout << std::endl;
+
+	    return 0;
+	}				
+	
+## Exercise 1.6
+
+> Explain whether the following program fragment is legal.
+
+Illegal.
+
+	std::cout << "The sum of " << v1 << " and " << v2 << " is " << v1 + v2 << std::endl;
+	
+## Exercise 1.7
+
+## Exercise 1.8
+
+## [Exercise 1.9](ex1_9.cpp)

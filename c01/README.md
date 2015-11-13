@@ -83,3 +83,33 @@ Illegal.
 ## [Exercise 1.10](ex1_10.cpp)
 
 ## [Exercise 1.11](ex1_11.cpp)
+
+## Exercise 1.12
+
+> What does the following for loop do? What is the final value of sum?
+	
+	int sum = 0;
+	for (int i = -100; i <= 100; ++i)
+	sum += i;
+
+The loop sums the numbers from -100 to 100. The final sum is 0.
+
+## Exercise 1.13
+
+> Rewrite the exercises from § 1.4.1 (p. 13) using for loops.
+
+## Exercise 1.14
+
+> Compare and contrast the loops that used a for with those using a while. Are there advantages or disadvantages to using either form?
+
+Refer [answer](http://stackoverflow.com/questions/2950931/for-vs-while-in-c-programming)
+
+
+## Exercise 1.15
+
+> Write programs that contain the common errors discussed in the box on page 16. Familiarize yourself with the messages the compiler generates.
+
+## Exercise 1.16
+
+> Write your own version of a program that prints the sum of a set of integers read from _cin_.
+

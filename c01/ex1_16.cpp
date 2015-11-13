@@ -5,5 +5,5 @@ int main() {
     for (; std::cin >> value; ) {
         sum += value;
     }
-    printf("ˆsum is %d", sum);
+    printf("sum is %d", sum);
 }

@@ -1,3 +1,6 @@
+Note : C++11 flag need to enable. For GCC and Clang, this can be done with the `-std=c++11`
+
+
 ## Exercise 1.1
 
 > Review the documentation for your compiler and determine what file naming convention it uses. Compile and run the main program from page 2.
@@ -142,3 +145,30 @@ Refer [answer](http://stackoverflow.com/questions/2950931/for-vs-while-in-c-prog
 
 [code](ex1_20.cpp)
 
+## Exercise 1.21
+
+> Write a program that reads two Sales_item objects that have the same ISBN and produces their sum.
+
+[code](ex1_21.cpp)
+
+## Exercise 1.22
+
+> Write a program that reads several transactions for the same ISBN. Write the sum of all the transactions that were read.
+
+[code](ex1_22.cpp)
+
+## Exercise 1.23
+
+> Write a program that reads several transactions and counts how many transactions occur for each ISBN.
+
+[code](ex1_23.cpp)
+
+## Exercise 1.24
+
+> Test the previous program by giving multiple transactions representing multiple ISBNs. The records for each ISBN should be grouped together.
+
+## Exercise 1.25
+
+> Using the Sales_item.h header from the Web site, compile and execute the bookstore program presented in this section.
+
+[code](ex1_22.cpp)

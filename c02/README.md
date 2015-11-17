@@ -35,10 +35,15 @@ use `double`
 	std::cout << u - i << std::endl;
 
 32
+
 2^32 - 32 = 4294967264
+
 32
+
 -32
+
 0
+
 0
 
 ## Exercise 2.4
@@ -80,3 +85,30 @@ use `double`
 > Using escape sequences, write a program to print 2M followed by a newline. Modify the program to print 2, then a tab, then an M, followed by a newline.
 
 [code](ex2_8.cpp)
+
+## Exercise 2.9
+
+> Explain the following definitions. For those that are illegal, explain what’s wrong and how to correct it.
+(a) std::cin >> int input_value;
+(b) int i = { 3.14 };
+(c) double salary = wage = 9999.99;
+(d) int i = 3.14;
+
+(a): error
+(b): error
+(c): error, wage is not defined
+(d): correct but will be truncated
+
+## Exercise 2.10
+
+> What are the initial values, if any, of each of the following variables?
+	
+	std::string global_str;
+	int global_int;
+	int main()
+	{
+    	int local_int;
+    	std::string local_str;
+	}
+	
+Uninitialized objects of built-in type defined inside a function body have a undefined value. Objects of class type that we do not explicitly inititalize have a value that is defined by class.

@@ -89,10 +89,10 @@ use `double`
 ## Exercise 2.9
 
 > Explain the following definitions. For those that are illegal, explain what’s wrong and how to correct it.
-(a) std::cin >> int input_value;
-(b) int i = { 3.14 };
-(c) double salary = wage = 9999.99;
-(d) int i = 3.14;
+- (a) std::cin >> int input_value;
+- (b) int i = { 3.14 };
+- (c) double salary = wage = 9999.99;
+- (d) int i = 3.14;
 
 (a): error
 (b): error
@@ -112,3 +112,14 @@ use `double`
 	}
 	
 Uninitialized objects of built-in type defined inside a function body have a undefined value. Objects of class type that we do not explicitly inititalize have a value that is defined by class.
+
+## Exercise 2.11
+
+> Explain whether each of the following is a declaration or a definition:
+- (a) extern int ix = 1024;
+- (b) int iy;
+- (c) extern int iz;
+
+(a): definition
+(b): definition
+(c): declaration

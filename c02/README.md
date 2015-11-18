@@ -123,3 +123,73 @@ Uninitialized objects of built-in type defined inside a function body have a und
 (a): definition
 (b): definition
 (c): declaration
+
+## Exercise 2.12
+
+> Which, if any, of the following names are invalid?
+- (a) int double = 3.14;
+- (b) int _;
+- (c) int catch-22;
+- (d) int 1_or_2 = 1;
+- (e) double Double = 3.14;
+
+(a), (c), (d)
+
+## Exercise 2.13
+
+> What is the value of j in the following program?
+
+	int i = 42;
+	int main()
+	{
+		int i = 100;
+		int j = i;
+	}
+	
+100
+
+## Exercise 2.14
+
+> Is the following program legal? If so, what values are printed?
+
+	int i = 100, sum = 0;
+    for (int i = 0; i != 10; ++i)
+        sum += i;
+    std::cout << i << " " << sum << std::endl;
+    
+100 45
+
+## Exercise 2.15
+
+> Which of the following definitions, if any, are invalid? Why?
+- (a) int ival = 1.01;
+- (b) int &rval1 = 1.01;
+- (c) int &rval2 = ival;
+- (d) int &rval3;
+
+(b) initializer must be an object
+(d) a reference must be initialized
+
+## Exercise 2.16
+
+> Which, if any, of the following assignments are invalid? If they are valid, explain what they do.
+	int i = 0, &r1 = i; double d = 0, &r2 = d;
+- (a) r2 = 3.14159;
+- (b) r2 = r1;
+- (c) i = r2;
+- (d) r1 = d;
+
+(a) assign d 3.14159
+(b) i will convert to double
+(c) truncated
+(d) truncated
+
+## Exercise 2.17
+
+> What does the following code print?
+	
+	int i, &ri = i;
+	i = 5; ri = 10;
+	std::cout << i << " " << ri << std::endl;
+	
+10 10

@@ -193,3 +193,14 @@ Uninitialized objects of built-in type defined inside a function body have a und
 	std::cout << i << " " << ri << std::endl;
 	
 10 10
+
+## Exercise 2.18
+
+> Write code to change the value of a pointer. Write code to change the value to which the pointer points.
+
+```cpp
+int a = 1, b = 2;
+int *p1 = &a, *p2 = p1;
+p1 = &b;
+*p1 = 3;
+```

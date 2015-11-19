@@ -289,3 +289,14 @@ C++ forbids implicit conversions like `long *lp = &i;` but `void*` is a special 
 (a) ip is a pointer of int, i is an int, r is a reference of i
 (b) i is an int, ip is `nullptr`
 (c) ip is a pointer of int, ip2 is an int
+
+## Exercise 2.26
+
+> Which of the following are legal? For those that are illegal, explain why.
+- (a) const int buf;
+- (b) int cnt = 0;
+- (c) const int sz = cnt;
+- (d) ++cnt; ++sz;
+
+(a) not initialized
+(d) sz is const 

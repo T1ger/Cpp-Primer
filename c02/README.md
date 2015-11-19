@@ -34,6 +34,7 @@ std::cout << i - i2 << std::endl;
 std::cout << i - u << std::endl;
 std::cout << u - i << std::endl;
 ```
+
 32
 
 2^32 - 32 = 4294967264
@@ -70,6 +71,7 @@ std::cout << u - i << std::endl;
 int month = 9, day = 7;
 int month = 09, day = 07;
 ```
+
 ## Exercise 2.7
 
 > What values do these literals represent? What type does each have?
@@ -111,6 +113,7 @@ int main()
     std::string local_str;
 }
 ```	
+
 Uninitialized objects of built-in type defined inside a function body have a undefined value. Objects of class type that we do not explicitly inititalize have a value that is defined by class.
 
 ## Exercise 2.11
@@ -146,6 +149,7 @@ int main()
 	int j = i;
 }
 ```
+
 100
 
 ## Exercise 2.14
@@ -156,7 +160,8 @@ int i = 100, sum = 0;
 for (int i = 0; i != 10; ++i)
     sum += i;
 std::cout << i << " " << sum << std::endl;
-```    
+```
+
 100 45
 
 ## Exercise 2.15
@@ -194,6 +199,7 @@ int i, &ri = i;
 i = 5; ri = 10;
 std::cout << i << " " << ri << std::endl;
 ```
+
 10 10
 
 ## Exercise 2.18
@@ -231,3 +237,44 @@ int *p1 = &i;
 ```
 
 p1 = 42 * 42 = 1764
+
+## Exercise 2.21
+
+> Explain each of the following definitions. Indicate whether any are illegal and, if so, why.
+```cpp
+int i = 0;
+```
+(a) double * dp = &i;
+(b) int *ip = i;
+(c) int *p = &i;
+
+(a) type error
+(b) i is not address
+
+## Exercise 2.22
+
+> Assuming p is a pointer to int, explain the following code:
+```cpp
+if (p) // ...
+if (*p) // ...
+```
+
+First one check whether p == nullptr
+Second one check the value of p points to whether is 0
+
+## Exercise 2.23
+
+> Given a pointer p, can you determine whether p points to a valid object? If so, how? If not, why not?
+
+No, A pointer need not be initialized at the time it is defined. More info need to be provided.
+
+## Exercise 2.24
+
+> Why is the initialization of p legal but that of lp illegal?
+```cpp
+int i = 42;
+void *p = &i;
+long *lp = &i;
+```
+
+C++ forbids implicit conversions like long *lp = &i; but void* is a special pointer that may point to any type 

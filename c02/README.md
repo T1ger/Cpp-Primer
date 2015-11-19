@@ -24,16 +24,16 @@ use `double`
 ## Exercise 2.3 
 
 > What output will the following code produce?
->
-	unsigned u = 10, u2 = 42;
-	std::cout << u2 - u << std::endl;
-	std::cout << u - u2 << std::endl;
-	int i = 10, i2 = 42;
-	std::cout << i2 - i << std::endl;
-	std::cout << i - i2 << std::endl;
-	std::cout << i - u << std::endl;
-	std::cout << u - i << std::endl;
-
+```cpp
+unsigned u = 10, u2 = 42;
+std::cout << u2 - u << std::endl;
+std::cout << u - u2 << std::endl;
+int i = 10, i2 = 42;
+std::cout << i2 - i << std::endl;
+std::cout << i - i2 << std::endl;
+std::cout << i - u << std::endl;
+std::cout << u - i << std::endl;
+```
 32
 
 2^32 - 32 = 4294967264
@@ -66,10 +66,10 @@ use `double`
 ## Exercise 2.6
 
 > What, if any, are the differences between the following definitions:
->
-	int month = 9, day = 7;
-	int month = 09, day = 07;
-
+```cpp
+int month = 9, day = 7;
+int month = 09, day = 07;
+```
 ## Exercise 2.7
 
 > What values do these literals represent? What type does each have?
@@ -102,15 +102,15 @@ use `double`
 ## Exercise 2.10
 
 > What are the initial values, if any, of each of the following variables?
-	
-	std::string global_str;
-	int global_int;
-	int main()
-	{
-    	int local_int;
-    	std::string local_str;
-	}
-	
+```cpp
+std::string global_str;
+int global_int;
+int main()
+{
+    int local_int;
+    std::string local_str;
+}
+```	
 Uninitialized objects of built-in type defined inside a function body have a undefined value. Objects of class type that we do not explicitly inititalize have a value that is defined by class.
 
 ## Exercise 2.11
@@ -138,25 +138,25 @@ Uninitialized objects of built-in type defined inside a function body have a und
 ## Exercise 2.13
 
 > What is the value of j in the following program?
-
-	int i = 42;
-	int main()
-	{
-		int i = 100;
-		int j = i;
-	}
-	
+```cpp
+int i = 42;
+int main()
+{
+	int i = 100;
+	int j = i;
+}
+```
 100
 
 ## Exercise 2.14
 
 > Is the following program legal? If so, what values are printed?
-
-	int i = 100, sum = 0;
-    for (int i = 0; i != 10; ++i)
-        sum += i;
-    std::cout << i << " " << sum << std::endl;
-    
+```cpp
+int i = 100, sum = 0;
+for (int i = 0; i != 10; ++i)
+    sum += i;
+std::cout << i << " " << sum << std::endl;
+```    
 100 45
 
 ## Exercise 2.15
@@ -173,7 +173,9 @@ Uninitialized objects of built-in type defined inside a function body have a und
 ## Exercise 2.16
 
 > Which, if any, of the following assignments are invalid? If they are valid, explain what they do.
-	int i = 0, &r1 = i; double d = 0, &r2 = d;
+```cpp
+int i = 0, &r1 = i; double d = 0, &r2 = d;
+```
 - (a) r2 = 3.14159;
 - (b) r2 = r1;
 - (c) i = r2;
@@ -187,11 +189,11 @@ Uninitialized objects of built-in type defined inside a function body have a und
 ## Exercise 2.17
 
 > What does the following code print?
-	
-	int i, &ri = i;
-	i = 5; ri = 10;
-	std::cout << i << " " << ri << std::endl;
-	
+```cpp
+int i, &ri = i;
+i = 5; ri = 10;
+std::cout << i << " " << ri << std::endl;
+```
 10 10
 
 ## Exercise 2.18
@@ -204,3 +206,28 @@ int *p1 = &a, *p2 = p1;
 p1 = &b;
 *p1 = 3;
 ```
+
+## Exercise 2.19
+
+> Explain the key differences between pointers and references.
+
+A __reference__ defines an alternative name for an object
+
+A __pointer__ is a compound type that 'points to' another type.
+
+#### Differences
+
+- a reference is another name of an already existing object. a pointer is an object in its own right
+- Once initialized, a reference remains bound to its initial object. A pointer can be assigned and copied.
+- A reference must be initialized. A pointer need not be initialized at the time it is defined.
+
+## Exercise 2.20
+
+> What does the following program do?
+```cpp
+int i = 42;
+int *p1 = &i;
+*p1 = *p1 * * p1;
+```
+
+p1 = 42 * 42 = 1764

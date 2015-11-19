@@ -277,4 +277,15 @@ void *p = &i;
 long *lp = &i;
 ```
 
-C++ forbids implicit conversions like long *lp = &i; but void* is a special pointer that may point to any type 
+C++ forbids implicit conversions like `long *lp = &i;` but `void*` is a special pointer that may point to any type 
+
+## Exercise 2.25
+
+> Determine the types and values of each of the following variables.
+- (a) ```cpp int* ip, i, &r = i; ```
+- (b) ```cpp int i, *ip = 0; ```
+- (c) ```cpp int* ip, ip2; ```
+
+(a) ip is a pointer of int, i is an int, r is a reference of i
+(b) i is an int, ip is `nullptr`
+(c) ip is a pointer of int, ip2 is an int

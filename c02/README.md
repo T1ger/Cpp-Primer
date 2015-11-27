@@ -299,7 +299,7 @@ C++ forbids implicit conversions like `long *lp = &i;` but `void*` is a special 
 - (d) ++cnt; ++sz;
 
 (a) not initialized
-(d) sz is const 
+(d) sz is _const_ 
 
 
 ## Exercise 2.27
@@ -328,7 +328,7 @@ legal
 
 (f) ```cpp const int &const r2 ```
 
-r2 is not an object which can not const;
+r2 is not an object which can not _const_;
 
 (g) ```cpp const int i2 = i, &r = i; ```
 
@@ -356,7 +356,7 @@ p3 need initialize
 
 (e) ```cpp const int *p; ```
 
-legal. p is a pointer to const int
+legal. p is a pointer to _const_ int
 
 ## Exercise 2.29
 
@@ -368,20 +368,55 @@ legal
 
 (b) ```cpp p1 = p3; ```
 
-p3 is const pointer to a const int
+p3 is _const_ pointer to a _const_ int
 
 (c) ```cpp p1 = &ic; ```
 
-ic is a const int
+ic is a _const_ int
 
 (d) ```cpp p3 = &ic; ```
 
-p3 is a const pointer
+p3 is a _const_ pointer
 
 (e) ```cpp p2 = p1; ```
 
-p2 is a const pointer
+p2 is a _const_ pointer
 
 (f) ```cpp ic = *p3; ```
 
-ic is const int
+ic is _const_ int
+
+## Exercise 2.30
+
+> For each of the following declarations indicate whether the object being declared has top-level or low-level _const_
+
+```cpp
+const int v2 = 0; // top
+int v1 = v2; // N/A
+int *p1 = &v1, &r1 = v1; // N/A
+const int *p2 = &v2, *const p3 = &i, &r2 = v2; // p2 has low, p3 has top and low, r2 has low
+```
+
+## Exercise 2.31
+
+> Given the declarations in the previous exercise determine whether the following assignments are legal. Explain how the top-level or low-level const applies in each case.
+
+```cpp r1 = v2; ```
+
+Legal. v2 is top-level _const int_.
+
+```cpp p1 = p2; ```
+
+p2 is low-level pointer to _const int_, which cannot assign to pointer to _int_ 
+
+```cpp p2 = p1; ```
+
+Legal. p2 is low-level pointer to _const int_
+
+```cpp p1 = p3; ```
+
+p3 is a _const_ pointer to _const int_, which has both high and low level _const_, which cannot assign to pointer to _int_
+
+```cpp p2 = p3; ```
+
+Legal. p2 is low-level pointer to _const int_ and p3 is a _const_ pointer to _const int_, which has both high and low level _const_

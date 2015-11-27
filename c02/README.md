@@ -300,3 +300,36 @@ C++ forbids implicit conversions like `long *lp = &i;` but `void*` is a special 
 
 (a) not initialized
 (d) sz is const 
+
+
+## Exercise 2.27
+
+> Which of the following are legal? For those that are illegal, explain why.
+
+(a) ```cpp int i = -1, &r = 0; ```
+
+r must refer to an object
+
+(b) ```cpp int *const p2 = &i2; ```
+
+If `i2` is exist, legal.
+
+(c) ```cpp const int i = -1, &r = 0; ```
+
+legal
+
+(d) ```cpp const int *const p3 = &i2; ```
+
+legal
+
+(e) ```cpp const int *p1 = &i2; ```
+
+legal
+
+(f) ```cpp const int &const r2 ```
+
+r2 is not an object which can not const;
+
+(g) ```cpp const int i2 = i, &r = i; ```
+
+legal

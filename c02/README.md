@@ -333,3 +333,55 @@ r2 is not an object which can not const;
 (g) ```cpp const int i2 = i, &r = i; ```
 
 legal
+
+## Exercise 2.28
+
+> Explain the following definitions. Identify any that are illegal.
+
+(a) ```cpp int i, *const cp; ```
+
+cp need initialize
+
+(b) ```cpp int *p1, *const p2; ```
+
+p2 need initialize
+
+(c) ```cpp const int ic, &r = ic; ```
+
+ic need initialize
+
+(d) ```cpp const int *const p3; ```
+
+p3 need initialize
+
+(e) ```cpp const int *p; ```
+
+legal. p is a pointer to const int
+
+## Exercise 2.29
+
+> Uing the variables in the previous exercise, which of the following assignments are legal? Explain why.
+
+(a) ```cpp i = ic; ```
+ 
+legal
+
+(b) ```cpp p1 = p3; ```
+
+p3 is const pointer to a const int
+
+(c) ```cpp p1 = &ic; ```
+
+ic is a const int
+
+(d) ```cpp p3 = &ic; ```
+
+p3 is a const pointer
+
+(e) ```cpp p2 = p1; ```
+
+p2 is a const pointer
+
+(f) ```cpp ic = *p3; ```
+
+ic is const int

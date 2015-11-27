@@ -420,3 +420,13 @@ p3 is a _const_ pointer to _const int_, which has both high and low level _const
 ```cpp p2 = p3; ```
 
 Legal. p2 is low-level pointer to _const int_ and p3 is a _const_ pointer to _const int_, which has both high and low level _const_
+
+## Exercise 2.32
+
+> Is the following code legal or not? If not, how might you make it legal?
+```cpp
+int null = 0, *p = null;
+```
+
+~~_null_ is keyword.~~ 
+*p should equal `nullptr`

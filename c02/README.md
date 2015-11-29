@@ -430,3 +430,23 @@ int null = 0, *p = null;
 
 ~~_null_ is keyword.~~ 
 *p should equal `nullptr`
+
+## Exercise 2.33
+
+> Using the variable definitions from this section, determine what happens in each of these assignments:
+
+```cpp
+a = 42; // assign 42 to a
+b = 42; // assign 42 to b
+c = 42; // assign 42 to c
+d = 42; // error, d is a pointer to int
+e = 42; // error, e is a pointer to const int
+f = 42; // assign 42 to f
+g = 42; // error, g is a refer to const int, 42 is not an object
+```
+
+## Exercise 2.34
+
+> Write a program containing the variables and assignments from the previous exercise. Print the variables before and after the assignments to check whether your predictions in the previous exercise were correct. If not, study the examples until you can convince yourself you know ￼￼what led you to the wrong conclusion.
+
+[code](ex2_34.cpp)

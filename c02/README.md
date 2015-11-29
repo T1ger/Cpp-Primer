@@ -450,3 +450,24 @@ g = 42; // error, g is a refer to const int, 42 is not an object
 > Write a program containing the variables and assignments from the previous exercise. Print the variables before and after the assignments to check whether your predictions in the previous exercise were correct. If not, study the examples until you can convince yourself you know ￼￼what led you to the wrong conclusion.
 
 [code](ex2_34.cpp)
+
+## Exercise 2.35
+
+> Determine the types deduced in each of the following definitions. Once you’ve figured out the types, write a program to see whether you were correct.
+```cpp
+const int i = 42;
+auto j = i; const auto &k = i; auto *p = &i; 
+const auto j2 = i, &k2 = i;
+```
+
+i is a _const int_
+
+j is a _int_
+
+k is a refer to _const int_
+
+p is ~~a pointer to _int_~~ _const int*_
+
+j2 is a _const int_
+
+k2 is ~~a refer to _int_~~ _const int&_

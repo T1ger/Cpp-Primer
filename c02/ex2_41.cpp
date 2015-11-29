@@ -1,46 +1,38 @@
 #include <iostream>
-#include <string>
-
-using namespace std;
-
-struct Sales_data {
-    string bookNo;
-    unsigned unit_sold = 0;
-    double revenue = 0.0;
-};
+#include "Sales_data.h"
 
 int main() {
     Sales_data total;
     double price = 0.0;
     
-    if (cin >> total.bookNo >> total.unit_sold >> price) {
+    if (std::cin >> total.bookNo >> total.unit_sold >> price) {
         total.revenue = total.unit_sold * price;
         
         Sales_data trans;
-        while (cin >> trans.bookNo >> trans.unit_sold >> price) {
+        while (std::cin >> trans.bookNo >> trans.unit_sold >> price) {
             trans.revenue = trans.unit_sold * price;
             if (trans.bookNo == total.bookNo) {
                 total.unit_sold += trans.unit_sold;
                 total.revenue += trans.revenue;
             } else {
-                cout << total.bookNo << " " << total.unit_sold << " " << total.revenue << " ";
+                std::cout << total.bookNo << " " << total.unit_sold << " " << total.revenue << " ";
                 if (total.unit_sold > 0) {
-                    cout << total.revenue / total.unit_sold << endl;
+                    std::cout << total.revenue / total.unit_sold << std::endl;
                 } else {
-                    cout << "(No sales)" << endl;
+                    std::cout << "(No sales)" << std::endl;
                 }
                 total = trans;
             }
         }
-        cout << total.bookNo << " " << total.unit_sold << " " << total.revenue << " ";
+        std::cout << total.bookNo << " " << total.unit_sold << " " << total.revenue << " ";
         if (total.unit_sold > 0) {
-            cout << total.revenue / total.unit_sold << endl;
+            std::cout << total.revenue / total.unit_sold << std::endl;
         } else {
-            cout << "(No sales)" << endl;
+            std::cout << "(No sales)" << std::endl;
         }
         return 0;
     } else {
-        cerr << "No data?!" << endl;
+        std::cerr << "No data?!" << std::endl;
         return -1;
     }
     

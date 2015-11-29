@@ -471,3 +471,49 @@ p is ~~a pointer to _int_~~ _const int*_
 j2 is a _const int_
 
 k2 is ~~a refer to _int_~~ _const int&_
+
+## Exercise 2.36
+
+> In the following code, determine the type of each variable and the value each variable has when the code finishes:
+```cpp 
+int a = 3, b = 4;
+decltype(a) c = a;
+decltype((b)) d = a;
+++c;
+++d;
+```
+
+a is _int_, b is _int_
+
+c is _int_
+
+d is refer to a
+
+a = 4, b = 4, c = 4, d = 4
+
+## Exercise 2.37
+
+> Assignment is an example of an expression that yields a reference type. The type is a reference to the type of the left-hand operand. That is, if i is an int, then the type of the expression i = x is int&. Using that knowledge, determine the type and value of each variable in this code:
+```cpp
+int a = 3, b = 4;
+decltype(a) c = a;
+decltype(a = b) d = a;
+```
+
+a is _int_, a = 3
+
+b is _int_, b = 4
+
+c is _int_, c = 3
+
+d is _int&_, d = 3 
+
+## Exercise 2.38
+
+> Describe the differences in type deduction between decltype and auto. Give an example of an expression where auto and decltype will deduce the same type and an example where they will deduce differing types.
+
+`decltype` returns the type of that, variable, including top-level `const` and reference, `auto` not.
+
+`decltype` could get the type that expression yields, `auto` can't
+
+[code](ex2_38.cpp)

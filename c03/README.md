@@ -13,3 +13,15 @@
 [code read line](ex3_2_1.cpp)
 
 [code read word](ex3_2_2.cpp)
+
+## Exercise 3.3
+
+> Explain how whitespace characters are handled in the `string` input operator and in the `getline` function
+
+- For code like `is >> s`, input is separated by whitespaces while reading into string s.
+- For code like `getline(is, s)` input is separated by newline `\n` while reading into string s. Other whitespaces are ignored.
+- For code like `getline(is, s, delim)` input is separated by delim while reading into string s. All whitespaces are ignored.
+
+## Exercise 3.4
+
+> Write a program to read two `string`s and report whether the `string`s are equal. If not, report which of the two is larger. Now, change the program to report whether the `string`s have the same length, and if not, report which is longer.

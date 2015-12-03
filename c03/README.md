@@ -105,3 +105,15 @@ vector<int> v5{ 10, 42 };      // size:2,  value:10, 42
 vector<string> v6{ 10 };       // size:10, value:""
 vector<string> v7{ 10, "hi" }; // size:10, value:"hi"
 ```
+
+## Exercise 3.14
+
+> Write a program to read a sequence of `int`s from `cin` and store those values in a `vector`.
+
+[code](ex3_14.cpp)
+
+## Exercise 3.15
+
+> Repeat the previous program but read `string`s this time.
+
+[code](ex3_15.cpp)

@@ -37,3 +37,47 @@
 [code without space](ex3_5_1.cpp)
 
 [code with space](ex3_5_2.cpp)
+
+## Exercise 3.6
+
+> Use a range `for` to change all the characters in a `string` to X
+
+[code](ex3_6.cpp)
+
+## Exercise 3.7
+
+> What would happen if you define the loop control variable in the previous exercise as type `char`? Predict the results and then change your program to use a char to see if you were right.
+
+It will change every c to 'X', but this won't affect the original string
+
+## Exercise 3.8
+
+> Rewrite the program in the first exercise, first using a `while` and again using a traditional `for` loop. Which of the three approaches do you prefer and why?
+
+I prefer range loop in this situation.
+
+## Exercise 3.9
+
+> What does the following program do? Is it valid? If not, why not?
+```cpp
+string s;
+cout << s[0] << endl;
+```
+
+Error, s is empty string, s[0] is undefined
+
+## Exercise 3.10
+
+> Write a program that reads a string of characters including punctuation and writes what was read but with the punctuation removed.
+
+[code](ex3_10.cpp)
+
+## Exercise 3.11
+
+> Is the following range `for` legal? If so, what is the type of `c`?
+```cpp
+const string s = "Keep out!";
+for (auto &c : s) { /* ... */}
+```
+
+legal if code doesn't change the value of c, c is a `const char&`.

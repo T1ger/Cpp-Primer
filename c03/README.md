@@ -25,3 +25,15 @@
 ## Exercise 3.4
 
 > Write a program to read two `string`s and report whether the `string`s are equal. If not, report which of the two is larger. Now, change the program to report whether the `string`s have the same length, and if not, report which is longer.
+
+[code compare string](ex3_4_1.cpp)
+
+[code compare string length](ex3_4_2.cpp)
+
+## Exercise 3.5
+
+> Write a program to read `string`s from the standard input, concatenating what is read into one large `string`. Print the concatenated `string`. Next, change the program to seperate adjacent input `string`s by a space.
+
+[code without space](ex3_5_1.cpp)
+
+[code with space](ex3_5_2.cpp)

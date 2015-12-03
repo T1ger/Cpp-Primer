@@ -117,3 +117,49 @@ vector<string> v7{ 10, "hi" }; // size:10, value:"hi"
 > Repeat the previous program but read `string`s this time.
 
 [code](ex3_15.cpp)
+
+## Exercise 3.16
+
+> Write a program to print the size and contents of the `vector`s from _Exercise 3.13_. Check whether your answers to that exercise were correct. If not, restudy $3.3.1(p.97) until you understand why you were wrong.
+
+[code](ex3_16.cpp)
+
+## Exercise 3.17
+
+> Read a sequence of words from `cin` and store the values a `vector`. After you've read all the words, process the `vector` and change each word to uppercase. Print the transformed elements, eight word to a line.
+
+[code](ex3_17.cpp)
+
+## Exercise 3.18
+
+> Is the following program legal? If not, how might you fix it?
+```cpp
+vector<int> ivec;
+ivec[0] = 42;
+```
+
+ivec[0] is not defined, you can not assign a value to it.
+To fix it, try:
+
+```cpp
+vector<int> ivec = { 42 };
+```
+
+## Exercise 3.19
+
+> List three ways to define a `vector` and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.
+
+```cpp
+vector<int> x = (10, 42); // first way
+vector<int> y = {42, 42, 42, 42, 42, 42, 42, 42, 42, 42}; // second way
+vector<int> z;
+for (int i = 0; i != 10; i++) {
+    z.push_back(42);
+} // third way
+```
+
+## Exercise 3.20
+
+> Read a set of integers into a `vector`. Print the sum of each pair of adjacent elements. Change your program so that it prints the sum of the first and last elements, followed by the sum of the second and second-to-last, and so on.
+
+[code](ex3_20.cpp)

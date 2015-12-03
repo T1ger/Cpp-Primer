@@ -7,10 +7,10 @@ using std::endl;
 using std::string;
 
 int main() {
-	string s("Hello World!");
-	cout << "String was: '" << s << "'" << endl;
-	for (auto &c : s) c = 'X';
-	cout << "String  is: '" << s << "'" << endl;
-	
-	return 0;
+    string s("Hello World!");
+    cout << "String was: '" << s << "'" << endl;
+    for (auto &c : s) c = 'X';
+    cout << "String  is: '" << s << "'" << endl;
+
+    return 0;
 }

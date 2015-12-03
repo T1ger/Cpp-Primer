@@ -7,10 +7,10 @@ using std::endl;
 using std::string;
 
 int main() {
-	string word;
-	while (cin >> word) {
-		cout << word << endl;
-	}
-	
-	return 0;
+    string word;
+    while (cin >> word) {
+        cout << word << endl;
+    }
+
+    return 0;
 }

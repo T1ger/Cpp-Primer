@@ -9,13 +9,13 @@ using std::string;
 using std::vector;
 
 int main() {
-	vector<int> ivec;
-	int i = 0;
-	while (cin >> i) {
-		ivec.push_back(i);
-	}
-	
-	cout << "There are " << ivec.size() << " elements in ivec." << endl;
-	
-	return 0;
+    vector<int> ivec;
+    int i = 0;
+    while (cin >> i) {
+        ivec.push_back(i);
+    }
+
+    cout << "There are " << ivec.size() << " elements in ivec." << endl;
+
+    return 0;
 }

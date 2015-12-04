@@ -163,3 +163,21 @@ for (int i = 0; i != 10; i++) {
 > Read a set of integers into a `vector`. Print the sum of each pair of adjacent elements. Change your program so that it prints the sum of the first and last elements, followed by the sum of the second and second-to-last, and so on.
 
 [code](ex3_20.cpp)
+
+## Exercise 3.21
+
+> Redo the first exercise from $3.3.3(p.105) using iterators.
+
+[code](ex3_21.cpp)
+
+## Exercise 3.22
+
+> Revise the loop that printed the first paragraph in `text` to instead change the elements in `text` that correspond to the first paragraph to all uppercase. After you've updated `text`, print its contents.
+
+[code](ex3_22.cpp)
+
+## Exercise 3.23
+
+> Write a program to create a `vector` with ten `int` elements. Using an iterator, assign each element a value that is twice its current value. Test your program by printing the `vector`.
+
+[code](ex3_23.cpp)

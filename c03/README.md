@@ -181,3 +181,25 @@ for (int i = 0; i != 10; i++) {
 > Write a program to create a `vector` with ten `int` elements. Using an iterator, assign each element a value that is twice its current value. Test your program by printing the `vector`.
 
 [code](ex3_23.cpp)
+
+## Exercise 3.24
+
+> Redo the last exercise from $3.3.3 (p. 105) using iterators.
+
+[code](ex3_24.cpp)
+
+## Exercise 3.25
+
+> Rewirte the grade clustering program from $3.3.3 (p. 104) using iterators instead of subscripts.
+
+[code](ex3_25.cpp)
+
+## Exercise 3.26
+
+> In the binary search program on page 112, why did we write `mid=beg+(end-beg)/2;` instead of `mid=(beg+end) /2;`?
+
+(beg + end) means nothing.
+
+## Exercise 3.27
+
+>

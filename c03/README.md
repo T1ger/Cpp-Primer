@@ -202,4 +202,15 @@ for (int i = 0; i != 10; i++) {
 
 ## Exercise 3.27
 
->
+> Assuming `txt_size` is a function that takes no arguments and returns an `int` value, which of the following definitions are illegal? Explain why.
+```cpp
+unsigned buf_size = 1024;
+```
+
+(a) ```cpp int ia[buf_size]; // buf_size is not constexpr ```
+
+(b) ```cpp int ia[4 * 7 - 14]; // legal ```
+
+(c) ```cpp int ia[txt_size()]; // legal if txt_size() is constexpr ```
+
+(d) ```cpp char st[11] = "fundamental"; // "fundamental" size is 12 including '\0' ```

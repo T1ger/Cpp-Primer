@@ -240,4 +240,52 @@ __ia2: all elements are undefined__
 > List some of the drawbacks of using an array instead of a `vector`
 
 1. size is fixed at compiling time, which would lose flexibility.
-2. ...
+2. easy to have bug prone.
+3. ...
+
+## Exercise 3.30
+
+> Identify the indexing errors in the following code:
+```cpp
+constexpr size_t array_size = 10;
+int ia[array_size];
+for (size_t ix = 1; ix <= array_size; ++ix)
+    ia[ix] = ix;
+```
+
+`ia`'s index is starting from 0, so ia[array_size] will be undefined
+
+## Exercise 3.31
+
+> Write a program to define an array of ten `int`s. Give each element the same value as its position in the array.
+
+[code](ex3_31.cpp)
+
+## Exercise 3.32
+
+> Copy the array you defined in the previous exercise into another array. Rewrite your program to use `vector`s.
+
+## Exercise 3.33
+
+> What would happen if we did not initialize the `scores` array in the program on page 116?
+
+all elements in scores are undefined.
+
+## Exercise 3.34
+
+> Given that `p1` and `p2` point to elements in the same array, what does the following code do? Are there values of `p1` or `p2` that make this code illegal?
+```cpp p1 += p2 - p1; ```
+
+move p1 to p2 position
+
+## Exercise 3.35
+
+> Using pointers, write a program to set the elements in an array to zero
+
+[code](ex3_35.cpp)
+
+## Exercise 3.36
+
+> Write a program to compare two arrays for equality. Write a similar program to compare two `vector`s
+
+[code](ex3_36.cpp)

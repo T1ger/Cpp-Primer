@@ -214,3 +214,30 @@ unsigned buf_size = 1024;
 (c) ```cpp int ia[txt_size()]; // legal if txt_size() is constexpr ```
 
 (d) ```cpp char st[11] = "fundamental"; // "fundamental" size is 12 including '\0' ```
+
+## Exercise 3.28
+
+> What are the values in the following arrays?
+```cpp 
+string sa[10];
+int ia[10];
+int main() {
+    string sa2[10];
+    int    ia2[10];
+}
+```
+
+sa: all elements are empty strings
+
+ia: all elements are 0
+
+sa2: all elements are empty strings
+
+__ia2: all elements are undefined__
+
+## Exercise 3.29
+
+> List some of the drawbacks of using an array instead of a `vector`
+
+1. size is fixed at compiling time, which would lose flexibility.
+2. ...

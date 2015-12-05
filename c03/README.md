@@ -289,3 +289,29 @@ move p1 to p2 position
 > Write a program to compare two arrays for equality. Write a similar program to compare two `vector`s
 
 [code](ex3_36.cpp)
+
+## Exercise 3.37
+
+> What does the following program do?
+```cpp
+const char ca[] = { 'h', 'e', 'l', 'l', 'o' };
+const char *cp = ca;
+while (*cp) {
+    cout << *cp << endl;
+    ++cp;
+}
+```
+
+first print all elements in ca[], but ca[] does not have a null, which means the while loop will not terminate.
+
+## Exercise 3.38
+
+> In this section, we noted that it was not only illegal but meaningless to try to add two pointers. Why would adding two pointers be meaningless?
+
+refer to [Why can't I add pointers](http://stackoverflow.com/questions/2935038/why-cant-i-add-pointers)
+
+## Exercise 3.39
+
+> Write a program to compare two `string`s. Now write a program to compare the values of two C-style character strings.
+
+[code](ex3_39.cpp)

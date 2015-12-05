@@ -315,3 +315,21 @@ refer to [Why can't I add pointers](http://stackoverflow.com/questions/2935038/w
 > Write a program to compare two `string`s. Now write a program to compare the values of two C-style character strings.
 
 [code](ex3_39.cpp)
+
+## Exercise 3.40
+
+> Write a program to define two character arrays initialized from string literals. Now define a third character array to hold the concatenation of the two arrays. Use `strcpy` and `strcat` to copy the two arrays into the third.
+
+[code](ex3_40.cpp)
+
+## Exercise 3.41
+
+> Write a program to initialize a `vector` from an array of `int`s
+
+[code](ex3_41.cpp)
+
+## Exercise 3.42
+
+> Write a program to copy a `vector` of `int`s into an array of `int`s
+
+[code](ex3_42.cpp)

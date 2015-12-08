@@ -294,3 +294,38 @@ unsigned long ul1 = 3, ul2 = 7;
 (d) ```cpp ul1 || ul2; // true ```
 
 ## Exercise 4.28
+
+> Write a program to print the size of each of the built-in types.
+
+[code](ex4_28.cpp)
+
+## Exercise 4.29
+
+> Predict the output of the following code and explain your reasoning. Now run the program. Is the output what you expected? If not, figure out why.
+```cpp
+int x[10]; int *p = x;
+cout << sizeof(x) / sizeof(*x) << endl;
+cout << sizeof(p) / sizeof(*p) << endl;
+```
+
+The first one is 10
+
+The second one depends on the machine
+
+## Exercise 4.30
+
+> Using Table 4.12 (p.166), parenthesize the following expressions to match the default evaluation:
+> (a) `sizeof x + y`
+> (b) `sizeof p->mem[i]`
+> (c) `sizeof a < b`
+> (d) `sizeof f()`
+
+(a) `(sizeof x) + y`
+
+(b) `sizeof (p->mem[i])`
+
+(c) `(sizeof a ) < b`
+
+(d) `sizeof (f())` if `f()` does not return void!
+
+## Exercise 4.31

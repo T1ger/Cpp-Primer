@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-int main(int argc, char *argv[]) {
+int main() {
     
     char q = 113; // 01110001
         

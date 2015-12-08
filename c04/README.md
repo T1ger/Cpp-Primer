@@ -119,4 +119,95 @@ if (a > b && b > c && c > d)
 > Assuming i, j, and k are all ints, explain what i != j < k means.
 
 ~~first check if `i` equals `j`, get `0` or `1`, the compare with `k`~~
+
 `i != j < k` equals `i != (j < k)`
+
+## Exercise 4.13
+
+> What are the values of `i` and `d` after each assignment?
+> `int i; double d;`
+
+(a) `d = i = 3.5;`
+
+d = 3.0, i = 3
+
+(b) `i = d = 3.5;`
+
+i = 3, d = 3.5
+
+## Exercise 4.14
+
+> Explain what happens in each of the if tests:
+
+```cpp
+if (42 = i)   // error: literal is rvalue
+if (i = 42)   // true.
+```
+
+## Exercise 4.15
+
+> The following assignment is illegal. Why? How would you correct it?
+```cpp
+double dval; int ival; int *pi;
+dval = ival = pi = 0;
+```
+
+pointer to int and int are not convertable.
+
+```cpp
+dval = ival = 0;
+pi = 0;
+```
+
+## Exercise 4.16
+
+> Although the following are legal, they probably do not behave as the programmer expects. Why? Rewrite the expressions as you think they should be.
+```cpp
+if (p = getPtr() != 0)
+if (i = 1024)
+```
+
+First one, `=` has low precedence, should be `if ((p = getPtr()) != 0)`
+
+Second one, should be `if (i == 1024)`
+
+## Exercise 4.17
+
+> Explain the difference between prefix and postfix increment.
+
+The prefix operators return the object itself as an lvalue.
+The postfix operators return a copy of the object's original value as an rvalue.
+
+## Exercise 4.18
+
+> What would happen if the `whlie` loop on page 148 that prints the elements from a `vector` used the prefix increment operator?
+
+~~`*++pbeg` return the pbeg advanced pointed value~~
+
+It will print elements starting from second, at last print the dereference `v.end()`, which is undefined.
+
+## Exercise 4.19
+
+> Given that ptr points to an int, that vec is a vector, and that ival is an int, explain the behavior of each of these expressions. Which, if any, are likely to be incorrect? Why? How might each be corrected?
+
+```cpp
+ptr != 0 && *ptr++; // check ptr is not a nullptr, then check ptr original value and advance ptr
+
+ival++ && ival; // check ival and ival + 1 whether equal zero
+
+vec[ival++] <= vec[ival]; // error. undefine behavior.
+```
+See also [order of evaluation](http://en.cppreference.com/w/cpp/language/eval_order)
+
+## Exercise 4.20
+
+> Assuming that `iter` is a `vector<string>::iterator`, indicate which, if any, of the following expressions are legal. Explain the behavior of the legal expressions and why those that aren’t legal are in error.
+
+```cpp
+*iter++; // legal, return *iter, then advance iter
+(*iter)++; // illegal, *iter is string
+*iter.empty(); // illegal, iter is pointer which does not apply empty(), should be iter->empty()
+iter->empty(); // legal, check *iter is empty or not
+++*iter; // illegal, *iter is string
+iter++->empty(); // legal, check original *iter is empty or not
+```

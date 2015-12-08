@@ -240,4 +240,57 @@ conditional operators has really low precedence. Should be like: `string pl = s 
 
 > Our program that distinguished between high pass, pass, and fail depended on the fact that the conditional operator is right associative. Describe how that operator would be evaluated if the operator were left associative.
 
-No clue, review later...
+`finalgrade = (grade > 90) ? "high pass" : (grade < 60) ? "fail" : "pass";`
+
+for right associative:
+
+`finalgrade = ((grade > 90) ? "high pass" : ((grade < 60) ? "fail" : "pass"));`
+
+if change to left associative:
+
+`finalgrade = (((grade > 90) ? "high pass" : (grade < 60)) ? "fail" : "pass");`
+
+so result might only be fail or pass.
+
+## Exercise 4.25
+
+> What is the value of ~'q' << 6 on a machine with 32-bit ints and 8 bit chars, that uses Latin-1 character set in which 'q' has the bit pattern 01110001?
+
+`~` has higher precedence than `<<`, so `~'q'` will be: `10001110`, where `char` is signed 8 bits, -128~127, ~'q' equals -114.
+
+Then (-114) << 6 equals (-114) * 2^6 = -7296 
+
+Another procedure is: 
+
+0111 0001 ->
+ 
+1000 1110 (8 bits in dec: -114) -> 
+
+1111 1111 1111 1111 1111 1111 1000 1110 (32 bits in dec: -114) ->
+
+1111 1111 1111 1111 1110 0011 1000 0000 ( << 6, in dec: 4294960000 - 2^32 = -7296)
+
+[code](ex4_25)
+
+## Exercise 4.26
+
+> In our grading example in this section, what would happen if we used `unsigned int` as the type for `quiz1`?
+
+`int` without `long` could only promise at least 16 bits, but the teacher has 30 students, so the `int` might not be large enough to hold all of the students data.
+
+## Exercise 4.27
+
+> What is the result of each of these expressions?
+```cpp
+unsigned long ul1 = 3, ul2 = 7;
+```
+
+(a) ```cpp ul1 & ul2; // 3 ```
+
+(b) ```cpp ul1 | ul2; // 7 ```
+
+(c) ```cpp ul1 && ul2; // true ```
+
+(d) ```cpp ul1 || ul2; // true ```
+
+## Exercise 4.28

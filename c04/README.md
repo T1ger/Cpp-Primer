@@ -329,3 +329,35 @@ The second one depends on the machine
 (d) `sizeof (f())` if `f()` does not return void!
 
 ## Exercise 4.31
+
+> The program in this section used the prefix increment and decrement operators. Explain why we used prefix and not postfix. What changes would have to be made to use the postfix versions? Rewrite the program using postfix operators.
+
+Using postfix or prefix doesn't matter the result in this example.
+
+refer to [Advice: Use Postfix Operators only When Necessary](http://stackoverflow.com/questions/22591387/usage-of-prefix-or-postfix-increment-or-decrement)
+
+## Exercise 4.32
+
+> Explain the following loop.
+```cpp
+constexpr int size = 5;
+int ia[size] = { 1, 2, 3, 4, 5 };
+for (int *ptr = ia, ix = 0;
+    ix != size && ptr != ia+size;
+    ++ix, ++ptr) { /* ... */ }
+```
+
+ptr is the pointer to array, ix is the index to array, they act same function in this loop
+
+## Exercise 4.33
+
+> Using Table 4.12 (p.166) explain what the following expression does:
+> `someValue ? ++x, ++y : --x, --y`
+
+~~if someValue is true, x += 1, y += 1, return new value of y. Else, x -= 1, y -= 1, return new value of y~~
+
+comma has the lowest precedence in this expression, so it should be like `(someValue ? ++x, ++y : --x), --y`.
+
+First check someValue is true or not. If true, x += 1, y += 1, then y -= 1, return the new y;
+
+Else, x -= 1, then y -= 1, return the new y.

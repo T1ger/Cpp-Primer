@@ -211,3 +211,33 @@ iter->empty(); // legal, check *iter is empty or not
 ++*iter; // illegal, *iter is string
 iter++->empty(); // legal, check original *iter is empty or not
 ```
+
+## Exercise 4.21
+
+> Write a program to use a conditional operator to find the elements in a `vector<int>` that have odd value and double the value of each such element.
+
+[code](ex4_21.cpp)
+
+## Exercise 4.22
+
+> Extend the program that assigned high pass, pass and fail grades to also assign low pass for grades between 60 and 75 inclusive. Write two versions: One version that uses only conditional operators; the other should use one or more `if` statements. Which version do you think is easier to understand and why?
+
+[code](ex4_22.cpp)
+
+`if` version is better to understand.
+
+## Exercise 4.23
+
+> The following expression fails to compile due to operator precedence. Using Table 4.12 (p. 166), explain why it fails. How would you fix it?
+```cpp
+string s = "word";
+string pl = s + s[s.size() - 1] == 's' ? "" : "s" ;
+```
+
+conditional operators has really low precedence. Should be like: `string pl = s + (s[s.size() - 1] == 's' ? "" : "s");`
+
+## Exercise 4.24
+
+> Our program that distinguished between high pass, pass, and fail depended on the fact that the conditional operator is right associative. Describe how that operator would be evaluated if the operator were left associative.
+
+No clue, review later...

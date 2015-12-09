@@ -405,3 +405,40 @@ Else, x -= 1, then y -= 1, return the new y.
 (d) ival and fval convert to double, then the add result convert to char by truncation.
 
 ## Exercise 4.36
+
+> Assuming `i` is an `int` and `d` is a `double`. Write the expression `i *= d` so that it does integral, rather than floating-point, multiplication.
+
+```cpp
+i *= static_cast<int>(d);
+```
+
+## Exercise 4.37
+
+> Rewrite each of the following old-style casts to use a named cast:
+> ```cpp int i; double d; const string *ps; char *pc; void *pv; ```
+> 
+> (a) `pv = (void*)ps;`
+> 
+> (b) `i = int(*pc);`
+> 
+> (c) `pv = &d;`
+> 
+> (d) `pc = (char*) pv;`
+
+(a) `pv = const_cast<string*>(ps)`
+
+(b) `i = static_cast<int>(*pc)`
+
+(c) `pv = static_cast<void*>(&d)`
+
+(d) ~~`pc = static_cast<char*>(pv)`~~
+If neither cast is legal, then an old-style cast performs a `reinterpret_cast`. So,
+
+`pc = reinterpret_cast<char*>(pv)`
+
+## Exercise 4.38
+
+> Explain the following expression:
+> `double slope = static_cast<double>(j/i);`
+
+if j and i are both int, (j/i) will be an int, then convert to double.

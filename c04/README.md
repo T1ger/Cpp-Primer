@@ -361,3 +361,47 @@ comma has the lowest precedence in this expression, so it should be like `(someV
 First check someValue is true or not. If true, x += 1, y += 1, then y -= 1, return the new y;
 
 Else, x -= 1, then y -= 1, return the new y.
+
+## Exercise 4.34
+
+> Given the variable definitions in this section, explain what conversions take place in the following expressions: 
+> 
+> (a) `if (fval)`
+> 
+> (b) `dval = fval + ival;` 
+> 
+> (c) `dval + ival * cval;`
+> 
+> Remember that you may need to consider the associativity of the operators.
+
+(a) if fval equals 0, convert to false, else to true
+
+(b) ival converts to float, the result of fval add ival convert to double
+
+(c) cval converts to int, then the result of ival times cval convert to double
+
+## Exercise 4.35
+
+> Given the following definitions,
+> 
+> ```cpp char cval; int ival; unsigned int ui; float fval; double dval; ```
+> 
+> identify the implicit type conversions, if any, taking place:
+> 
+> (a) `cval = 'a' + 3;`
+> 
+> (b) `fval = ui - ival * 1.0;` 
+> 
+> (c) `dval = ui * fval;`
+> 
+> (d) `cval = ival + fval + dval;`
+
+(a) 'a' converts to int then the add result convert to char
+
+(b) ival convert to double, ui convert to double, then the result truncate to float
+
+(c) ui convert to float, then the muiltiple result convert to double
+
+(d) ival and fval convert to double, then the add result convert to char by truncation.
+
+## Exercise 4.36

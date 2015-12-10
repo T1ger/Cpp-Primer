@@ -31,7 +31,8 @@ diminishes the readability.
 if (!status) { /* ... */ }
 ```
 
-(a) ```cpp
+(a) 
+```cpp
 string::iterator iter = s.begin();
 while (iter != s.end()) { /* ... */ }
 ```

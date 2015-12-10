@@ -37,3 +37,20 @@ while (iter != s.end()) { /* ... */ }
 ```
 
 (b) `status` is only declared inside the scope of `while` statement.
+
+## Exercise 5.5
+
+> Using an `if-else` statement, write your own version of the program to generate the letter grade from a numeric grade.
+
+[code](ex5_5.cpp)
+
+## Exercise 5.6
+
+> Rewrite your grading program to use the conditional operator(§4.7, p.151) in place of the `if-else` statement.
+
+[code](ex5_6.cpp)
+
+## Exercise 5.7
+
+> Correct the errors in each of the following code fragments:
+> 

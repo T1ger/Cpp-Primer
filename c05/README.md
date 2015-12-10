@@ -25,11 +25,11 @@ diminishes the readability.
 ## Exercise 5.4
 
 > Explain each of the following examples, and correct any problems you detect.
-> (a) `while (string::iterator iter != s.end()) { /* ... */ }`
-> (b) ```cpp
-> while (bool status = find(word)) { /* ... */ }
-> if (!status) { /* ... */ }
-> ```
+```cpp
+(a) while (string::iterator iter != s.end()) { /* ... */ }
+(b) while (bool status = find(word)) { /* ... */ }
+if (!status) { /* ... */ }
+```
 
 (a) ```cpp
 string::iterator iter = s.begin();
@@ -53,4 +53,31 @@ while (iter != s.end()) { /* ... */ }
 ## Exercise 5.7
 
 > Correct the errors in each of the following code fragments:
-> 
+```cpp
+(a) if (ival1 != ival2) ival1 = ival2
+    else ival1 = ival2 = 0;
+(b) if (ival < minval) minval = ival;
+    occurs = 1;
+(c) if (int ival = get_value())
+    cout << "ival = " << ival << endl;
+    if (!ival)
+    cout << "ival = 0\n";
+(d) if (ival = 0)
+    ival = get_value();
+```
+
+(a) `ival1 = ival2;`
+
+(b) correct, but might intend to have large scope for both statement
+
+(c) second `if` should be `else if`
+
+(d) `ival == 0`
+
+## Exercise 5.8
+
+> What is a "dangling `else`"? How are `else` clauses resolved in C++?
+
+How do we know to which `if` a given `else` belongs? This problem usually referred to __dangling `else`__
+
+In C++ the ambiguity is resolved by specifying that each `else` is matched with the closest preceding unmatched `if` 

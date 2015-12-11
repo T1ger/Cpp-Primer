@@ -82,3 +82,82 @@ while (iter != s.end()) { /* ... */ }
 How do we know to which `if` a given `else` belongs? This problem usually referred to __dangling `else`__
 
 In C++ the ambiguity is resolved by specifying that each `else` is matched with the closest preceding unmatched `if` 
+
+## Exercise 5.9
+
+> Write a program using a series of `if` statements to count the number of vowels in text read from `cin`.
+
+[code](ex5_9.cpp)
+
+## Exercise 5.10
+
+> There is one problem with our vowel-counting program as we've implemented it: It doesn't count capital letters as vowels. Write a program that counts both lower- and uppercase letters as the appropriate vowel - that is, your program should count both 'a' and 'A' as part of `aCnt`, and so forth.
+
+[code](ex5_10.cpp)
+
+## Exercise 5.11
+
+> Modify our vowel-counting program so that it counts the number of occurrences of blank spaces, tabs, and newlines read.
+
+[code](ex5_11.cpp)
+
+## Exercise 5.12
+
+> Modify our vowel-counting program so that it counts the number of occurrences of the following two-character sequences: `ff`, `fl`, and `fi`.
+
+[code](ex5_12.cpp)
+
+## Exercise 5.13
+
+> Each of the programs in the highlighted text on page 184 contains a common programming error. Identify and correct each error.
+```cpp
+(a) unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
+    char ch = next_text();
+    switch (ch) {
+        case 'a': aCnt++;
+        case 'e': eCnt++;
+        default: iouCnt++;
+    }
+(b) unsigned index = some_value();
+    switch (index) {
+        case 1:
+            int ix = get_value();
+            ivec[ ix ] = index;
+            break;
+        default:
+            ix = ivec.size()-1;
+            ivec[ ix ] = index;
+    }
+(c) unsigned evenCnt = 0, oddCnt = 0;
+    int digit = get_num() % 10;
+    switch (digit) {
+        case 1, 3, 5, 7, 9:
+            oddcnt++;
+            break;
+        case 2, 4, 6, 8, 10:
+            evencnt++;
+            break;
+    }
+(d) unsigned ival=512, jval=1024, kval=4096;
+    unsigned bufsize;
+    unsigned swt = get_bufCnt();
+    switch(swt) {
+        case ival:
+            bufsize = ival * sizeof(int);
+            break;
+        case jval:
+            bufsize = jval * sizeof(int);
+            break;
+        case kval:
+            bufsize = kval * sizeof(int);
+            break;
+    }
+```
+
+(a) miss `break;` statement
+
+(b) `ix` might not be initialized if skip case 1
+
+(c) case label syntax error
+
+(d) case label must be a constant expression

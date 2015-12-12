@@ -209,6 +209,13 @@ I will choose `while`
 (a) do int v1, v2;		cout << "Please enter two numbers to sum:" ; 
 		if (cin >> v1 >> v2)			cout << "Sum is: " << v1 + v2 << endl; 
 	while (cin);
-(b) do {		// . . .	} while (int ival = get_response());(c) do i{nt ival = get_response();
+(b) do {		// . . .	} while (int ival = get_response());(c) do {
+		int ival = get_response();
 	} while (ival);
 ```
+
+(a) need `{` and `}` in `do { ... } while`
+
+(b) `ival` need be initialized before `do`
+
+(c) `ival` will be declared everytime when while loop continue

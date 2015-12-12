@@ -4,6 +4,8 @@
 using namespace std;
 int main() {
     string word, prev_word, tmp_word;
+    
+    // also can use: pair<string, int> max_duplicated;
     int cnt = 1, tmp_cnt = 0;
     while (cin >> tmp_word) {
         if (tmp_word == prev_word && ++tmp_cnt > cnt) {

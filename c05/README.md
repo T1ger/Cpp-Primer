@@ -171,3 +171,35 @@ In C++ the ambiguity is resolved by specifying that each `else` is matched with 
 > the output should indicate that the word now occurred three times.
 
 [code](ex5_14.cpp)
+
+## Exercise 5.15
+
+> Explain each of the following loops. Correct any problemsyou detect.
+```cpp
+(a) for (int ix=0; ix!=sz; ++ix) {/* ... */} 
+	if (ix != sz)		// . . .
+(b)int ix; 
+	for (ix!=sz; ++ix) {/* ... */}(c)for (int ix=0; ix!=sz; ++ix, ++sz) {/*...*/}
+```
+
+(a) `ix` is out of scope when `if` statement
+
+(b) no init statement in `for` loop, add `;`
+
+(c) if `ix` and `sz` are different, they will never be equal.
+
+## Exercise 5.16
+
+> The `while` loop is particularly good at executing while some condition holds; for example, when we need to read values until end-of-file. The for loop is generally thought of as a step loop: An index steps through a range of values in a collection. Write an idiomatic use of each loop and then rewrite each using the other loop construct. If you could use only one loop, which would you choose? Why?
+
+[code](ex5_16.cpp)
+
+I will choose `while`
+
+## Exercise 5.17
+
+> Given two `vector`s of `int`s, write a program to determine whether one vector is a prefix of the other. For vectors of unequal length, compare the number of elements of the smaller vector. For example, given the vectors containing 0, 1, 1, and 2 and 0, 1, 1, 2, 3, 5, 8, respectively your program should return true.
+
+[code](ex5_17.cpp)
+
+## Exercise 5.18

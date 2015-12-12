@@ -219,3 +219,9 @@ I will choose `while`
 (b) `ival` need be initialized before `do`
 
 (c) `ival` will be declared everytime when while loop continue
+
+## Exercise 5.19
+
+> Write a program that uses a do while loop to repetitively request two `string`s from the user and report which string is less than the other.
+
+[code](ex5_19.cpp)

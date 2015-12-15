@@ -251,3 +251,28 @@ for (int sz = get_size(); sz <= 0; sz = get_size()) {
 	;
 }
 ```
+
+## Exercise 5.23
+
+> Write a program that reads two integers from the standard input and prints the result of dividing the first number by the second.
+
+[code](ex5_23.cpp)
+
+## Exercise 5.24
+
+> Revise your program to throw an exception if the second number is zero. Test your program with a zero input to see what happens on your system if you don’t `catch` an exception.
+
+[code](ex5_24.cpp)
+
+This is what it looks like: 
+```bash
+5 0
+libc++abi.dylib: terminating with uncaught exception of type std::runtime_error: The second number can not be zero!
+Abort trap: 6
+```
+
+## Exercise 5.25
+
+> Revise your program from the previous exercise to use a `try` block to `catch` the exception. The `catch` clause should print a message to the user and ask them to supply a new number and repeat the code inside the `try`.
+
+[code](ex5_25.cpp)

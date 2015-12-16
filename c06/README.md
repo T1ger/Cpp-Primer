@@ -130,3 +130,68 @@ I prefer reference way which is more intuitive in my opinon.
 > Explain the rationale for the type of each of `find_char`'s parameters. In particular, why is `s` a reference to `const` but `occurs` is a plain reference? Why are these parameters references, but the `char` parameter `c` is not? What would happen if we made `s` a plain reference? What if we made `occurs` a reference to `const`?
 
 `s` should not be changed in the function. But `occurs`'s result must be calculated by the function.
+
+## Exercise 6.16
+
+> The following function, although leagl, is less useful than it might be. Identify and correct the limitation on this function:
+```cpp
+bool is_empty(string& s) { return s.empty(); }
+```
+
+This function will not change the argument, so `const` should be added, or the function could not be used with `const` string or in a `const` function. Should be: 
+```cpp
+bool is_empty(const string& s) { return s.empty(); }
+```
+
+## Exercise 6.17
+
+> Write a function to determine whether a `string` contains any capital letters. Write a function to change a `string` to all lowercase. Do the parameters you used in these functions have the same type? If so, why? If not, why not?
+
+[code](ex6_17.cpp)
+
+## Exercise 6.18
+
+> Write declarations for each of the following functions. When you write these declarations, use the name of the function to indicate what the function does.
+
+> (a) A function named `compare` that returns a `bool` and has two parameters that are references to a class named `matrix`.
+
+```cpp
+bool compare(const matrix &a, const matrix &b);
+```
+
+> (b) A function named `change_val` that returns a `vector<int>` iterator and takes two parameters: One is an `int` and the other is an iterator for a `vector<int>`.
+
+```cpp
+vector<int>::iterator change_val(int i, vector<int>::iterator iter); // not sure const is needed or not for vector
+```
+
+## Exercise 6.19
+
+> Given the following declarations, determine which calls are legal and which are illegal. For those that are illegal, explain why.
+```cpp
+double calc(double);int count(const string &, char);int sum(vector<int>::iterator, vector<int>::iterator, int);vector<int> vec(10);
+```
+
+> (a) `calc(23.4, 55.1);`
+
+`calc` only accept one parameter.
+
+> (b) `count("abcda", 'a');`
+
+legal
+
+> (c) `calc(66);`
+
+legal, but `66` will convert to `double`
+
+> (d) `sum(vec.begin(), vec.end(), 3.8);`
+
+legal, but `3.8` will truncate to `3` which is a int
+
+## Exercise 6.20
+
+> When should reference parameters be references to `const`? What happens if we make a parameter a plain reference when it could be a reference to `const`?
+
+We should use `const` when possible. Plain reference might change the reference value.
+
+## Exercise 6.21

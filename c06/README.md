@@ -34,7 +34,7 @@ Arguments are the initializers for a function's parameters.
 
 ## Exercise 6.5
 
-> Write a function to return the absolute value of its argument.[code](ex6.5.cpp)
+> Write a function to return the absolute value of its argument.[code](ex6_5.cpp)
 
 ## Exercise 6.6
 
@@ -64,7 +64,7 @@ int main()
 }
 ```
 
-## Exercise 6,7
+## Exercise 6.7
 
 > Write a function that returns 0 when it is first called and then generates numbers in sequence each time it is called again.
 
@@ -74,3 +74,17 @@ size_t generate() {
 	return count++; 
 }
 ```
+
+## Exercise 6.8
+
+> Write a header file named Chapter6.h that contains declarations for the functions you wrote for the exercises in § 6.1 (p. 205).
+
+[code](Chapter6.h)
+
+## Exercise 6.9
+
+> Write your own versions of the `fact.cc` and `factMain.cc` files. These files should include your `Chapter6.h` from the exercises in the previous section. Use these files to understand how your compiler supports separate compilation.
+
+[fact.cc](fact.cc)
+
+[factMain.cc](factMain.cc)

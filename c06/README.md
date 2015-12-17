@@ -238,3 +238,24 @@ Refer to [Confused about array parameters](http://stackoverflow.com/questions/26
 > Write a program that accepts the options presented in thissection. Print the values of the arguments passed to `main`.
 
 [code](ex6_25.cpp)
+
+## Exercise 6.27
+
+> Write a function that takes an `initializer_list<int>` and produces the sum of the elements in the list.
+
+[code](ex6_27.cpp)
+
+## Exercise 6.28
+
+> In the second version of `error_msg` that has an ErrCode parameter, what is the type of `elem` in the `for` loop?
+
+
+`elem` is a `const std::string&`
+
+## Exercise 6.29
+
+> When you use an `initializer_list` in a range `for` would you ever use a reference as the loop control variable? If so, why? If not, why not?
+
+elements in an `initializer_list` are always `const`, so I would use `const reference` as the range `for` variable.
+
+## Exercise 6.30

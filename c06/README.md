@@ -259,3 +259,44 @@ Refer to [Confused about array parameters](http://stackoverflow.com/questions/26
 elements in an `initializer_list` are always `const`, so I would use `const reference` as the range `for` variable.
 
 ## Exercise 6.30
+
+> Compile the version of `str_subrange` as presented onpage 223 to see what your compiler does with the indicated errors.
+
+Non-void function 'str_subrange' should return a value. // error #1
+
+Control may reach end of non-void function. // error #2
+
+## Exercise 6.31
+
+> When is it valid to return a reference? A reference to `const`?
+
+One good way to ensure that the return is safe is to ask: To what preexisting object is the reference referring?
+
+## Exercise 6.32
+
+> Indicate whether the following function is legal. If so, explainwhat it does; if not, correct any errors and then explain it.
+```cpp
+int &get(int *arry, int index) { return arry[index]; } 
+int main() {	int ia[10];	for (int i = 0; i != 10; ++i)		get(ia, i) = i;
+}
+```
+
+Legal.
+
+## Exercise 6.33
+
+> Write a recursive function to print the contents of a `vector`.
+
+[code](ex6_33.cpp)
+
+## Exercise 6.34
+
+> What would happen if the stopping condition in `factorial` were `if (val != 0)`
+
+if `val` is negative, it will be an endless loop.
+
+## Exercise 6.35
+
+> In the call to `fact`, why did we pass `val - 1` rather than `val--`?
+
+`val--` will make a copy of `val`, then have `val = val - 1`, this actually won't change the argument value for `val`

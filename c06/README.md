@@ -195,3 +195,46 @@ legal, but `3.8` will truncate to `3` which is a int
 We should use `const` when possible. Plain reference might change the reference value.
 
 ## Exercise 6.21
+
+> Write a function that takes an `int` and a pointer to an `int` and returns the larger of the `int` value or the value to which the pointer points. What type should you use for the pointer?
+
+```cpp
+int compare(const int a, const int* b);
+```
+
+## Exercise 6.22
+
+> Write a function to swap two `int` pointers.
+
+[code](ex6_22.cpp)
+
+## Exercise 6.23
+
+> Write your own versions of each of the `print` functions presented in this section. Call each of these functions to print `i` and `j` defined as follows:```cppint i = 0, j[2] = {0, 1};
+```
+
+[code](ex6_23.cpp)
+
+## Exercise 6.24
+
+> Explain the behavior of the following function. If there are problems in the code, explain what they are and how you might fix them.
+```cpp
+void print(const int ia[10]){ 
+	for (size_t i = 0; i != 10; ++i) 
+		cout << ia[i] << endl;
+}
+```
+
+Refer to [Confused about array parameters](http://stackoverflow.com/questions/26530659/confused-about-array-parameters)
+
+## Exercise 6.25
+
+> Write a `main` function that takes two arguments. Concatenate the supplied arguments and print the resulting `string`.
+
+[code](ex6_25.cpp)
+
+## Exercise 6.26
+
+> Write a program that accepts the options presented in thissection. Print the values of the arguments passed to `main`.
+
+[code](ex6_25.cpp)

@@ -300,3 +300,25 @@ if `val` is negative, it will be an endless loop.
 > In the call to `fact`, why did we pass `val - 1` rather than `val--`?
 
 `val--` will make a copy of `val`, then have `val = val - 1`, this actually won't change the argument value for `val`
+
+## Exercise 6.36
+
+> Write the declaration for a function that returns a reference to an array of ten `string`s, without using either a trailing return, `decltype`, or a type alias.
+
+~~`std::string (&)[10] func();`~~
+
+need review!!!
+
+Refer to [How to return a reference to an array of ten strings](http://stackoverflow.com/questions/24131948/how-to-return-a-reference-to-an-array-of-ten-strings)
+
+## Exercise 6.37
+
+> Write three additional declarations for the function in the previous exercise. One should use a type alias, one should use a trailing return, and the third should use `decltype`. Which form do you prefer and why?
+
+need review!!!
+
+## Exercise 6.38
+
+> Revise the `arrPtr` function on to return a reference to the array.
+
+need review!!!

@@ -415,3 +415,60 @@ assert(cin);
 ```
 
 Not a good use. `assert(s == sought)` is more better
+
+## Exercise 6.49
+
+> What is a candidate function? What is a viable function?
+
+A __candidate function__ is a function with the same name as the called function and for which a declaration is visible at the point of the call.
+
+A function have the same number of parameters as there are arguments in the call, and the type of each argument must match - or be convertible to - the type of its corresponding parameter is __viable function__
+
+## Exercise 6.50
+
+> Given the declarations for `f` from page 242, list the viable functions, if any for each of the following calls. Indicate which function is the best match, or if the call is illegal whether there is no match or why the call is ambiguous.
+```cpp
+(a) f(2.56, 42) 
+(b) f(42)(c) f(42, 0)(d) f(2.56, 3.14)
+```
+
+(a) ambiguous. (`double`, `int`)
+
+(b) `f(int)`
+
+(c) `f(int, int)`
+
+(d) `f(double, double)`
+
+## Exercise 6.51
+
+> Write all four versions of `f`. Each function should print a distinguishing message. Check your answers for the previous exercise. If your answers were incorrect, study this section until you understand why your answers were wrong.
+
+[code](ex6_51.cpp)
+
+## Exercise 6.52
+
+> Given the following declarations,
+```cppvoid manip(int, int); 
+double dobj;
+```> what is the rank (§ 6.6.1, p. 245) of each conversion in the following calls?
+```cpp(a) manip('a', 'z');(b) manip(55.4, dobj);
+```
+
+(a) ranked 3: match through a promotion
+
+(b) ranked 4: match through an arithmetic or pointer conversion.
+
+## Exercise 6.53
+
+> Explain the effect of the second declaration in each one of the following sets of declarations. Indicate which, if any, are illegal.```cpp
+(a) int calc(int&, int&);int calc(const int&, const int&); 
+(b) int calc(char*, char*);int calc(const char*, const char*); 
+(c) int calc(char*, char*);int calc(char* const, char* const);
+```
+
+(a) `const` is lower level, function overloading legal
+
+(b) legal
+
+(c) illegal. `const` is top level

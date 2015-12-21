@@ -472,3 +472,26 @@ double dobj;
 (b) legal
 
 (c) illegal. `const` is top level
+
+## Exercise 6.54
+
+> Write a declaration for a function that takes two `int` parameters and returns an `int`, and declare a `vector` whose elements have this function pointer type.
+
+```cpp
+int fi(int, int);
+vector<decltype(*fi)> v;
+```
+
+[code](ex6_54.cpp)
+
+## Exercise 6.55
+
+> Write four functions that add, subtract, multiply, and divide two int values. Store pointers to these values in your `vector` from the previous exercise.
+
+[code](ex6_55.cpp);
+
+## Exercise 6.56
+
+> Call each element in the vector and print their result.
+
+[code](ex6_55.cpp)

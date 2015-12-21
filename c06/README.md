@@ -322,3 +322,96 @@ need review!!!
 > Revise the `arrPtr` function on to return a reference to the array.
 
 need review!!!
+
+## Exercise 6.39
+
+> Explain the effect of the second declaration in each one ofthe following sets of declarations. Indicate which, if any, are illegal.
+```cpp(a) int calc(int, int);	int calc(const int, const int);(b) int get(); 
+	double get();(c) int *reset(int *); 
+	double *reset(double *);
+```
+
+(a) illegal
+
+(b) illegal
+
+(c) legal
+
+## Exercise 6.40
+
+> Which, if either, of the following declarations are errors? Why?
+```cpp
+(a) int ff(int a, int b = 0, int c = 0);
+(b) char *init(int ht = 24, int wd, char bckgrnd);
+```
+
+(a) correct
+
+(b) A default argument is specified as an initializer for a parameter in the parameter list. We may define defaults for one or more parameters. However, if a parameter has a default argument, all the parameters that follow it must also have default arguments.
+
+## Exercise 6.41
+
+> Which, if any, of the following calls are illegal? Why? Which, if any, are legal but unlikely to match the programmer’s intent? Why?
+```cpp
+char *init(int ht, int wd = 80, char bckgrnd = ' '); 
+(a) init();
+(b) init(24,10);
+(c) init(14, '*');
+```
+
+(a) illegal. No default argument for `ht`
+
+(b) legal
+
+(c) legal but not match intent. '*' might for `bckgrnd`
+
+## Exercise 6.42
+
+> Give the second parameter of `make_plural` (§ 6.3.2, p. 224) a default argument of 's'. Test your program by printing singular and plural versions of the words `success` and `failure`.
+
+[code](ex6_42.cpp)
+
+## Exercise 6.43
+
+> Which one of the following declarations and definitions wouldyou put in a header? In a source file? Explain why.```cpp
+(a) inline bool eq(const BigInt&, const BigInt&) {...}
+(b) void putValues(int *arr, int size);
+```
+
+(a) put in a header. Must be in header file because is inline function.
+
+(b) put in a source file. Declaration in header file, definition in source file.
+
+## Exercise 6.44
+
+> Rewrite the `isShorter` function from § 6.2.2 (p. 211) to beinline.
+
+[code](ex6_44.h)
+
+## Exercise 6.45
+
+> Review the programs you’ve written for the earlier exercises and decide whether they should be defined as `inline`. If so, do so. If not, explain why they should not be `inline`.
+
+## Exercise 6.46
+
+> Would it be possible to define `isShorter` as a `constexpr`? If so, do so. If not, explain why not.
+
+In general, the `inline` mechanism is meant to optimize small, straight-line functions that are called frequently. Many compilers will not inline a recursive fuction. A 75-line function will almost surely not be expanded inline.
+
+No, the arguments ~~~would not be `const`~~~ (`std::string` is not a literal type. A `constexpr` function is defined like any other function but must meet certain restrictions: the __return type__ and __the type of each parameter__ must be a literal type.
+
+## Exercise 6.47
+
+> Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that used recursion to print the contents of a `vector` to conditionally print information about its execution. For example, you might print the size of the `vector` on each call. Compile and run the program with debugging turned on and again with it turned off.
+
+[code](ex6_47.cpp)
+
+## Exercise 6.48
+
+> Explain what this loop does and whether it is a good use of `assert`:
+```cpp
+string s;while (cin >> s && s != sought) { } // empty body 
+assert(cin);
+```
+
+Not a good use. `assert(s == sought)` is more better

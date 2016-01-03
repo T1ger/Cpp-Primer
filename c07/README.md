@@ -61,3 +61,35 @@ if (read(read(cin, data1), data2))
 ```
 
 `if` will read two `Sales_data` objects at one time.
+
+## Exercise 7.11
+
+> Add constructors to your `Sales_data` class and write a program to use each of the constructors.
+
+[header](ex7_11.h) | [code](ex7_11.cpp)
+
+## Exercise 7.12
+
+> Move the definition of the `Sales_data` constructor that takes an `istream` into the body of the Sales_data class.
+
+[header](ex7_12.h)
+
+## Exercise 7.13
+
+> Rewrite the program from page 255 to use the `istream` constructor.
+
+[code](ex7_13.cpp)
+
+## Exercise 7.14
+
+> Write a version of the default constructor that explicitly initializes the members to the values we have provided as in-class initializers.
+
+```cpp
+Sales_data() : units_sold(0), revenue(0) { }
+```
+
+## Exercise 7.15
+
+> Add appropriate constructors to your `Person` class.
+
+[header](ex7_15.h) | [code](ex7_15.cpp)

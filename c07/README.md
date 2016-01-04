@@ -161,3 +161,25 @@ A class can allow another class or function to access its non`public` members by
 > Write your own version of the `Screen` class.
 
 [header](ex7_23.h)
+
+## Exercise 7.24
+
+> Give your `Screen` class three constructors: a default constructor; a constructor that takes values for height and width and initializes the contents to hold the given number of blanks; and a constructor that takes values for height, width, and a character to use as the contents of the screen.
+
+[header](ex7_24.h)
+
+## Exercise 7.25
+
+> Can `Screen` safely rely on the default versions of copy and assignment? If so, why? If not, why not?
+
+Classes that use `vector`s and `string`s avoid the complexities involved in allocating and deallocating memory.
+
+The synthesized versions for copy, assignment, and destruction work correctly for classes that have `vector` or `string` members.
+
+Hence the class below which used only built-in type and strings can rely on the default version of copy and assignment. 
+
+## Exercise 7.26
+
+> Define `Sales_data::avg_price` as an `inline` function
+
+[header](ex7_26.h)

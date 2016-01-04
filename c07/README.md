@@ -126,3 +126,38 @@ Important advantages:
 The interface should be defined as `public`, the data shouldn't expose to outside of the class.
 
 [header](ex7_19.h)
+
+## Exercise 7.20
+
+> When are friends useful? Discuss the pros and cons of using friends.
+
+A class can allow another class or function to access its non`public` members by making that class or function a __friend__.
+
+#### Pros
+
+- the useful functions can refer to class members in the class scope without needing to explicitly prefix them with the class name.
+- you can access all the nonpublic members conveniently.
+- sometimes, more readable to the users of class.
+
+#### Cons
+
+- lessens encapsulation and therefore maintainability.
+- code verbosity, declarations inside the class, outside the class.
+
+## Exercise 7.21
+
+> Update your `Sales_data` class to hide its implementation. The programs you’ve written to use `Sales_data` operations should still continue to work. Recompile those programs with your new class definition to verify that they still work.
+
+[header](ex7_21.h) | [code](ex7_21.cpp)
+
+## Exercise 7.22
+
+> Update your `Person` class to hide its implementation.
+
+[header](ex7_22.h)
+
+## Exercise 7.23
+
+> Write your own version of the `Screen` class.
+
+[header](ex7_23.h)

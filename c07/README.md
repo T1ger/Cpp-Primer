@@ -237,3 +237,25 @@ void setAddr(const std::string &addr) { this->addr = addr; }
 ```cpp
 std::string getAddr() const { return this->addr; } // unnecessary
 ```
+
+## Exercise 7.31
+
+> Define a pair of classes `X` and `Y`, in which `X` has a pointer to `Y`, and `Y` has an object of type `X`.
+
+```cpp
+class Y;
+
+class X {
+	Y *px;
+};
+
+class Y {
+	X y;
+};
+```
+
+## Exercise 7.32
+
+> Define your own versions of `Screen` and `Window_mgr` in which `clear` is a member of `Window_mgr` and a friend of `Screen`.
+
+[header](ex7_32.h) | [code](ex7_32.cpp)

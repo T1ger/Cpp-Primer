@@ -259,3 +259,65 @@ class Y {
 > Define your own versions of `Screen` and `Window_mgr` in which `clear` is a member of `Window_mgr` and a friend of `Screen`.
 
 [header](ex7_32.h) | [code](ex7_32.cpp)
+
+## Exercise 7.33
+
+> What would happen if we gave `Screen` a `size` member defined as follows? Fix any problems you identify.
+```cpp
+pos Screen::size() const
+{
+    return height * width;
+}
+```
+
+`pos` might be unknown, so fixed by:
+
+```cpp
+Screen::pos Screen::size() const
+{
+    return height * width;
+}
+```
+
+## Exercise 7.34
+
+> What would happen if we put the `typedef` of `pos` in the `Screen` class on page 285 as the last line in the class?
+
+error: unknown type name 'pos'
+
+## Exercise 7.35
+
+> Explain the following code, indicating which definition of `Type` or `initVal` is used for each use of those names. Say how you would fix any errors.
+```cpp
+typedef string Type; 
+Type initVal(); 
+class Exercise { 
+public: 
+    typedef double Type; 
+    Type setVal(Type); 
+    Type initVal(); 
+private:
+    int val; 
+}; 
+Type Exercise::setVal(Type parm) { 
+    val = parm + initVal(); 
+    return val; 
+}
+```
+
+```cpp
+typedef string Type; 
+Type initVal(); // use 'string'
+class Exercise { 
+public: 
+    typedef double Type; 
+    Type setVal(Type); // use 'double'
+    Type initVal(); use 'double'
+private:
+    int val; 
+}; 
+Type Exercise::setVal(Type parm) { // return value use 'string'; para use 'double'
+    val = parm + initVal(); // Exercise::initVal()
+    return val; 
+}
+```

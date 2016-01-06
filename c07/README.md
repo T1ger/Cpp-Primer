@@ -390,4 +390,18 @@ Illegal. the call of overloaded `Sales_data()` will be ambiguous.
 > (e) Object 
 > (f) Tree
 
-review needed
+review later
+
+## Exercise 7.41
+
+> Rewrite your own version of the `Sales_data` class to use delegating constructors. Add a statement to the body of each of the constructors that prints a message whenever it is executed. Write declarations to construct a `Sales_data` object in every way possible. Study the output until you are certain you understand the order of execution among delegating constructors.
+
+[header](ex7_41.h) | [code](ex7_41.cpp) | [test](ex7_41_test.cpp)
+
+## Exercise 7.42
+
+> For the class you wrote for exercise 7.40 in § 7.5.1 (p. 291), decide whether any of the constructors might use delegation. If so, write the delegating constructor(s) for your class. If not, look at the list of abstractions and choose one that you think would use a delegating constructor. Write the class definition for that abstraction.
+
+review later
+
+## Exercise 7.43

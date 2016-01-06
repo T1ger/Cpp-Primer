@@ -17,8 +17,8 @@ public:
     Sales_data(const std::string &s, unsigned n, double p) : bookNo(s), units_sold(n), revenue(p*n) { std::cout << "Constructor: Sales_data(const std::string &s, unsigned n, double p) got called." << std::endl; }
     
     Sales_data() : Sales_data("", 0, 0)  { std::cout << "Constructor: Sales_data() got called." << std::endl; }
-    Sales_data(const std::string &s) : Sales_data(s, 0, 0) { std::cout << "Constructor: Sales_data(const std::string &s) got called." << std::endl; }
-    Sales_data(std::istream &);
+    explicit Sales_data(const std::string &s) : Sales_data(s, 0, 0) { std::cout << "Constructor: Sales_data(const std::string &s) got called." << std::endl; }
+    explicit Sales_data(std::istream &);
     
     Sales_data& combine(const Sales_data &other);
     std::string const& isbn() const { return bookNo; }

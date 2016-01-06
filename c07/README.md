@@ -443,4 +443,59 @@ false.
 
 > (d) If a class does not define a default constructor, the compiler generates one that initializes each data member to the default value of its associated type.
 
-false. Only if our class does not explicitly define __any constructors__, the compiler will implicitly define the default constructor for us.
+false. Only if our class does not explicitly define any constructors, the compiler will implicitly define the default constructor for us.
+
+## Exercise 7.47
+
+> Explain whether the `Sales_data` constructor that takes a `string` should be `explicit`. What are the benefits of making the constructor `explicit`? What are the drawbacks?
+
+Depends on requirement.
+
+Benefits:
+
+- prevent the use of a constructor in a context that requires an implicit conversion
+- we can define a constructor which is used only with the direct form of initialization
+
+Drawbacks:
+
+- meaningful only on constructors that can be called with a single argument
+
+## Exercise 7.48
+
+> Assuming the `Sales_data` constructors are not explicit, what operations happen during the following definitions
+```cpp
+string null_isbn("9-999-99999-9"); 
+Sales_data item1(null_isbn); 
+Sales_data item2("9-999-99999-9");
+```
+> What happens if the Sales_data constructors are explicit?
+
+Both work!
+
+## Exercise 7.49
+
+> For each of the three following declarations of `combine`, explain what happens if we call `i.combine(s)`, where `i` is a `Sales_data` and `s` is a `string`:
+> 
+> (a) `Sales_data &combine(Sales_data);` 
+
+ok.
+
+> (b) `Sales_data &combine(Sales_data&);` 
+
+`std::string&` could not convert to `Sales_data` type
+
+> (c) `Sales_data &combine(const Sales_data&) const;`
+
+`const` for this function will cause error
+
+## Exercise 7.50
+
+> Determine whether any of your `Person` class constructors should be `explicit`.
+
+review later
+
+## Exercise 7.51
+
+> Why do you think `vector` defines its single-argument constructor as explicit, but `string` does not?
+
+review later

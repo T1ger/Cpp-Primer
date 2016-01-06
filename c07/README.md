@@ -405,3 +405,42 @@ review later
 review later
 
 ## Exercise 7.43
+
+> Assume we have a class named `NoDefault` that has a constructor that takes an `int`, but has no default constructor. Define a class `C` that has a member of type `NoDefault`. Define the default constructor for `C`.
+
+[header](ex7_43.h) | [code](ex7_43.cpp)
+
+## Exercise 7.44
+
+> Is the following declaration legal? If not, why not?
+```cpp
+vector<NoDefault> vec(10);
+```
+
+Illegal. Ten elements for `NoDefault`, but no default initializer.
+
+## Exercise 7.45
+
+> What if we defined the `vector` in the previous execercise to hold objects of type `C`?
+
+Legal.
+
+## Exercise 7.46
+
+> Which, if any, of the following statements are untrue? Why?
+> 
+> (a) A class must provide at least one constructor.
+
+false. Compiler could create default constructor(synthesized default constructor) if there is no constructor.
+
+> (b) A default constructor is a constructor with an empty parameter list. 
+
+false. A default constructor is a constructor that is used if no initializer is supplied. What's more, a constructor that supplies default arguments for all its parameters also defines the default constructor)
+
+> (c) If there are no meaningful default values for a class, the class should not provide a default constructor.
+
+false.
+
+> (d) If a class does not define a default constructor, the compiler generates one that initializes each data member to the default value of its associated type.
+
+false. Only if our class does not explicitly define __any constructors__, the compiler will implicitly define the default constructor for us.

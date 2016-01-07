@@ -523,3 +523,59 @@ struct Sales_data {
     double revenue;
 };
 ```
+
+## Exercise 7.53
+
+> Define your own version of `Debug`
+
+[code](ex7.53.h)
+
+## Exercise 7.54
+
+> Should the members of `Debug` that begin with `set_` be declared as `constexpr`? If not, why not?
+
+No. `set_` do come with return statement
+
+## Exercise 7.55
+
+> Is the `Data` class from § 7.5.5 (p. 298) a literal class? If not, why not? If so, explain why it is literal.
+
+No. `std::string` is not a literal type
+
+## Exercise 7.56
+
+> What is a `static` class member? What are the advantages of `static` members? How do they differ from ordinary members?
+
+We say a member is associated with the class by adding the keyword `static` to tis declaration.
+
+Advantages
+
+- Each object can no need to store a common data. And if the data is changed, each object can use the new value.
+
+Differences
+
+- a static data member can have incomplete type.
+- we can use a static member as a default argument.
+
+## Exericse 7.57
+
+> Write your own version of the Account class.
+
+[code](ex7_57.h)
+
+## Exericse 7.58
+
+> Which, if any, of the following `static` data member declarations and definitions are errors? Explain why.
+```cpp
+// example.h 
+class Example { 
+public: 
+    static double rate = 6.5; // non-const static data member must be initialized out of line
+    static const int vecSize = 20; 
+    static vector<double> vec(vecSize); // class static members may not be initialized in the class body.
+}; 
+// example.C 
+#include "example.h" 
+double Example::rate; 
+vector<double> Example::vec;
+```

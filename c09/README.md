@@ -260,3 +260,38 @@ adds 75 elements of value 0 to the back of vec and then erases 90 elements from 
 
 We must supply an initializer or the element type must have a default constructor.
 
+## Exercise 9.31
+
+> The program on page 354 to remove even-valued elements and duplicate odd ones will not work on a `list` or `forward_list`. Why? Revise the program so that it works on these types as well.
+
+[list](ex9_31_list.cpp) | [forward_list](ex9_31_forward_list.cpp)
+
+## Exercise 9.32
+
+> In the program onpage 354 would it be legal to write the call to `insert` as follows? If not, why not?
+```cpp
+iter = vi.insert(iter, *iter++);
+```
+
+No. The order of evaluation of arguments is unspecified. "As a result, after entering function insert, iter could be its original value or original value + 1 or even anything else, depending on how compiler implemented.
+
+## Exercise 9.33
+
+> In the final example in this section what would happen if we did not assign the result of `insert` to `begin`? Write a program that omits this assignment to see if your expectation was correct.
+
+Crash, because the iterator is invalid after inserting.
+
+Ref: [code](ex9_33.cpp)
+
+## Exercise 9.34
+
+> Assuming `vi` is a container of `int`s that includes even and odd values, predict the behavior of the following loop. After you’ve analyzed this loop, write a program to test whether your expectations were correct.
+```cpp
+iter = vi.begin(); 
+while (iter != vi.end()) 
+    if (*iter % 2)
+        iter = vi.insert(iter, *iter); 
+    ++iter;
+```
+
+`insert` inserts elements at the specified location in the container(before `iterator`). So endless loop.

@@ -354,3 +354,27 @@ read | size | capacity
 > Given that you want to read a character at a time into a `string`, and you know that you need to read at least 100 characters, how might you improve the performance of your program?
 
 Use `reserve(200)` to allocate enough space for this string.
+
+## Exercise 9.43
+
+> Write a function that takes three `string`s, `s`, `oldVal`, and `newVal`. Using iterators, and the `insert` and `erase` functions replace all instances of oldVal that appear in `s` by `newVal`. Test your function by using it to replace common abbreviations, such as “tho” by “though” and “thru” by “through”.
+
+[code](ex9_43.cpp)
+
+## Exercise 9.44
+
+> Rewrite the previous function using an `index` and `replace`.
+
+[code](ex9_44.cpp)
+
+## Exercise 9.45
+
+> Write a funtion that takes a `string` representing a name and two other `string`s representing a prefix, such as “Mr.” or “Ms.” and a suffix, such as “Jr.” or “III”. Using iterators and the `insert` and `append` functions, generate and return a new `string` with the suffix and prefix added to the given name.
+
+[code](ex9_45.cpp)
+
+## Exercise 9.46
+
+> Rewrite the previous exercise using a position and length to manage the `string`s. This time use only the `insert` function.
+
+[code](ex9_46.cpp)

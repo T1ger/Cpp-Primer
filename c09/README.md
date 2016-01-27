@@ -295,3 +295,62 @@ while (iter != vi.end())
 ```
 
 `insert` inserts elements at the specified location in the container(before `iterator`). So endless loop.
+
+## Exercise 9.35
+
+> Explain the difference between a `vector`’s `capacity` and its `size`.
+
+The `size` of a container is the number of elements it already holds; its `capacity` is how many elements it can hold before more space must be allocated.
+
+## Exercise 9.36
+
+> Can a container have a `capacity` less than its `size`?
+
+No.
+
+## Exercise 9.37
+
+> Why don’t `list` or `array` have a `capacity` member?
+
+`list` does not hold elements contiguously. `array` has the fixed size statically.
+
+## Exercise 9.38
+
+> Write a program to explore how `vector`s grow in the library you use.
+
+[code](ex9_38.cpp)
+
+## Exercise 9.39
+
+> Explain what the following program fragment does:
+```cpp
+vector<string> svec; 
+svec.reserve(1024); // reserve capacity to 1024
+string word; 
+while (cin >> word)
+	svec.push_back(word); 
+svec.resize(svec.size()+svec.size()/2); // after add new string, resize capacity to 1.5 * size()
+```
+
+## Exercise 9.40
+
+> If the program in the previous exercise reads 256 words, what is its likely `capacity` after it is `resize`d? What if it reads 512? 1,000? 1,048?
+
+read | size | capacity
+-----|------|---------
+256  |384   |1024
+512  |768   |1024
+1000 |1500  |2048
+1048 |1572  |2048
+
+## Exercise 9.41
+
+> Write a program that initializes a `string` from a `vector<char>`.
+
+[code](ex9_41.cpp)
+
+## Exercise 9.42
+
+> Given that you want to read a character at a time into a `string`, and you know that you need to read at least 100 characters, how might you improve the performance of your program?
+
+Use `reserve(200)` to allocate enough space for this string.

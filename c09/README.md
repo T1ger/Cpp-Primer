@@ -378,3 +378,23 @@ Use `reserve(200)` to allocate enough space for this string.
 > Rewrite the previous exercise using a position and length to manage the `string`s. This time use only the `insert` function.
 
 [code](ex9_46.cpp)
+
+## Exercise 9.47
+
+> Write a program that finds each numeric character and then each alphabetic character in the `string "ab2c3d7R4E6"`. Write two versions of the program. The first should use `find_first_of`, and the second `find_first_not_of`.
+
+[code](ex9_47.cpp)
+
+## Exercise 9.48
+
+> Given the definitions of `name` and `numbers` on page 365, what does `numbers.find(name)` return?
+
+```cpp
+string::npos
+```
+
+## Exercise 9.49
+
+> A letter has an ascender if, as with `d` or `f`, part of the letter extends above the middle of the line. A letter has a descender if, as with `p` or `g`, part of the letter extends below the line. Write a program that reads a file containing words and reports the longest word that contains neither ascenders nor descenders.
+
+[code](ex9_49.cpp)

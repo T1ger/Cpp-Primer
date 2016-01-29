@@ -398,3 +398,21 @@ string::npos
 > A letter has an ascender if, as with `d` or `f`, part of the letter extends above the middle of the line. A letter has a descender if, as with `p` or `g`, part of the letter extends below the line. Write a program that reads a file containing words and reports the longest word that contains neither ascenders nor descenders.
 
 [code](ex9_49.cpp)
+
+## Exercise 9.50
+
+> Write a program to process a `vector<string>`s whose elements represent integral values. Produce the sum of all the elements in that `vector`. Change the program so that it sums of strings that represent floating-point values.
+
+[code](ex9_50.cpp)
+
+## Exercise 9.51
+
+> Write a class that has three `unsigned` members representing year, month, and day. Write a constructor that takes a `string` representing a date. Your constructor should handle a variety of date formats, such as January 1, 1900, 1/1/1900, Jan 1, 1900, and so on.
+
+[code](ex9_51.cpp)
+
+## Exercise 9.52
+
+> Use a `stack` to process parenthesized expressions. When you see an open parenthesis, note that it was seen. When you see a close parenthesis after an open parenthesis, `pop` elements down to and including the open parenthesis off the `stack`. `push` a value onto the `stack` to indicate that a parenthesized expression was replaced.
+
+[code](ex9_52.cpp)

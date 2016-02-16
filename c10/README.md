@@ -167,3 +167,54 @@ The library algorithms operate on iterators, not containers. Therefore, an algor
 > In the exercises for § 10.3.2 (p. 392) you wrote a version of `biggies` that uses `partition`. Rewrite that function to use `check_size` and `bind`.
 
 [code](ex10_25.cpp)
+
+## Exercise 10.26
+
+> Explain the differences among the three kinds of insert iterators.
+
+- `back_inserter` creates an iterator that uses `push_back`
+- `front_inserter` creates an iterator that uses `push_front`
+- `inserter` creates an iterator that uses `insert`
+
+## Exercise 10.27
+
+> In addition to `unique` (§ 10.2.3, p. 384), the library defines function named `unique_copy` that takes a third iterator denoting a destination into which to copy the unique elements. Write a program that uses `unique_copy` to copy the unique elements from a `vector` into an initially empty `list`.
+
+[code](ex10_27.cpp)
+
+## Exercise 10.28
+
+> Copy a `vector` that holds the values from `1` to `9` inclusive, into three other containers. Use an `inserter`, a `back_inserter`, and a `front_inserter`, respectivly to add elements to these containers. Predict how the output sequence varies by the kind of inserter and verify your predictions by running your programs.
+
+[code](ex10_28.cpp)
+
+## Exercise 10.29
+
+> Write a program using stream iterators to read a text file into a `vector` of `string`s.
+
+[code](ex10_29.cpp)
+
+## Exercise 10.30
+
+> Use stream iterators, `sort`, and `copy` to read a sequence of integers from the standard input, sort them, and then write them back to the standard output.
+
+[code](ex10_30.cpp)
+
+## Exercise 10.31
+
+> Update the program from the previous exercise so that it prints only the unique elements. Your program should use `unqiue_copy` (§ 10.4.1, p. 403).
+
+[code](ex10_31.cpp)
+
+## Exercise 10.32
+
+> Rewrite the bookstore problem from § 1.6 (p. 24) using a `vector` to hold the transactions and various algorithms to do the processing. Use `sort` with your `compareIsbn` function from § 10.3.1 (p. 387) to arrange the transactions in order, and then use `find` and `accumulate` to do the sum.
+
+[code](ex10_32.cpp)
+
+
+## Exercise 10.33
+
+> Write a program that takes the names of an input file and two output files. The input file should hold integers. Using an `istream_iterator` read the input file. Using `ostream_iterator`s, write the odd numbers into the first output file. Each value should be followed by a space. Write the even numbers into the second file. Each of these values should be placed on a separate line.
+
+[code](ex10_33.cpp)

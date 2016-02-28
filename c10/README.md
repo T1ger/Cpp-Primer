@@ -218,3 +218,61 @@ The library algorithms operate on iterators, not containers. Therefore, an algor
 > Write a program that takes the names of an input file and two output files. The input file should hold integers. Using an `istream_iterator` read the input file. Using `ostream_iterator`s, write the odd numbers into the first output file. Each value should be followed by a space. Write the even numbers into the second file. Each of these values should be placed on a separate line.
 
 [code](ex10_33.cpp)
+
+## Exercise 10.34
+
+> Use `reverse_iterators` to print a `vector` in reverse order.
+
+[code](ex10_34.cpp)
+
+## Exercise 10.35
+
+> Now print the elements in reverse order using ordinary iterators.
+
+[code](ex10_35.cpp)
+
+## Exercise 10.36
+
+> Use `find` to find the last element in a `list` of `int`s with value 0.
+
+[code](ex10_36.cpp)
+
+## Exercise 10.37
+
+> Given a `vector` that has ten elements, copy the elements from positions 3 through 7 in reverse order to a `list`.
+
+[code](ex10_37.cpp)
+
+## Exercise 10.38
+
+> List the five iterator categories and the operations that each supports.
+
+- Input iterator (`==`, `!=`, `++`, `*`)
+- Output iterator (`==`, `!=`, `++` `*`)
+- Forward iterator (`==`, `!=`, `++` `*`)
+- Bidirectional iterator (`==`, `!=`, `++` `*`, `--`)
+- Random-access iterator (`==`, `!=`, `++` `*`, `--`, `<`, `<=`, `>`, `>=`, `+`, `+=`, `-`, `-=`, `iter[n]`)
+
+## Exercise 10.39
+
+> What kind of iterator does a `list` have? What about a `vector`?
+
+`list` would be bidirectional iterator and `vector` is random-access iterator.
+
+## Exercise 10.40
+
+> What kinds of iterators do you think `copy` requires? What about `reverse` or `unique`?
+
+- `copy`: first and second are input iterator, third is output iterator;
+- `reverse`: bidirectional iterators.
+- `unique`: forward iterators.
+
+## Exercise 10.41
+
+> Based only on the algorithm and argument names, describe the operation that the each of the following library algorithms performs:
+```cpp
+replace(beg, end, old_val, new_val); // replace old_val by new_val from beg to end
+replace_if(beg, end, pred, new_val); // replace the first element confirms pred by new_val in the range between beg and end
+replace_copy(beg, end, dest, old_val, new_val); // copy to dest with replace old_val by new_val in range beg to end
+replace_copy_if(beg, end, dest, pred, new_val); // copy to dest with replace the first element confirms pred by new_val in range beg to end
+```

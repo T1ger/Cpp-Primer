@@ -276,3 +276,9 @@ replace_if(beg, end, pred, new_val); // replace the first element confirms pred 
 replace_copy(beg, end, dest, old_val, new_val); // copy to dest with replace old_val by new_val in range beg to end
 replace_copy_if(beg, end, dest, pred, new_val); // copy to dest with replace the first element confirms pred by new_val in range beg to end
 ```
+
+## Exercise 10.42
+
+> Reimplement the program that eliminated duplicate words that we wrote in § 10.2.3 (p. 383) to use a `list` instead of a `vector`.
+
+[code](ex10_42.cpp)

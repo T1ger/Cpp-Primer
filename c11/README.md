@@ -89,3 +89,154 @@ need review!
 ## Exercise 11.14
 
 > Extend the `map` of children to their family name that you wrote for the exercises in § 11.2.1 (p. 424) by having the `vector` store a `pair` that holds a child’s name and birthday.
+
+[code](ex11_14.cpp)
+
+## Exercise 11.15
+
+> What are the `mapped_type`, `value_type` of a `map` from `int` to `vector<int>`?
+
+`map<int, vector<int>>`
+
+so `mapped_type` is `vector<int>` and `value_type` is `pair<const int, vector<int>>`
+
+## Exercise 11.16
+
+> Using a `map` iterator write an expression that assigns a value to an element.
+
+[code](ex11_16.cpp)
+
+## Exercise 11.17
+
+> Assuming `c` is a `multiset` of `string`s and `v` is a `vector` of `string`s, explain the following calls. Indicate whether each call is legal:
+```cpp
+copy(v.begin(), v.end(), inserter(c, c.end())); // legal
+copy(v.begin(), v.end(), back_inserter(c)); // no push_back in set
+copy(c.begin(), c.end(), inserter(v, v.end())); // legal
+copy(c.begin(), c.end(), back_inserter(v)); // legal
+```
+
+## Exercise 11.18
+
+> Write the type of `map_it` from the loop on page 430 without using `auto` or `decltype`.
+
+`map<string, size_t>::const_iterator`
+
+## Exercise 11.19
+
+> Define a variable that you initialize by calling `begin()` on the `multiset` named `bookstore` from § 11.2.2 (p. 425). Write the variable’s type without using `auto` or `decltype`.
+
+```cpp
+multiset<Sales_data, decltype(compareIsbn)*>::iterator it = bookstore.begin();
+```
+
+## Exercise 11.20
+
+> Rewrite the word-counting program from § 11.1 (p. 421) to use `insert` instead of subscripting. Which program do you think is easier to write and read? Explain your reasoning.
+
+[code](ex11_20.cpp)
+
+I prefer subscripting way.
+
+
+## Exercise 11.21
+
+> Assuming `word_count` is a `map` from `string` to `size_t` and word is a `string`, explain the following loop:
+```cpp
+while (cin >> word) 
+    ++word_count.insert({word, 0}).first->second;
+```
+
+equals:
+
+```cpp
+++( ( (word_count.insert({word, 0}) ).first )->second );
+```
+
+## Exercise 11.22
+
+> Given a `map<string, vector<int>>`, write the types used as an argument and as the return value for the version of `insert` that inserts one element.
+
+```cpp
+pair<string, vector<int>> // as argument
+pair<map<string, vector<int>>::iterator, bool> // as return
+```
+
+## Exercise 11.23
+
+> Rewrite the `map` that stored `vector`s of children’s names with a key that is the family last name for the exercises in § 11.2.1 (p. 424) to use a `multimap`.
+
+```cpp
+std::multimap<string, string> families;
+```
+
+## Exercise 11.24
+
+> What does the following program do?
+```cpp
+map<int, int> m; 
+m[0] = 1;
+```
+
+check if key = 0 exists in the map, if true, change its value to 1, else, add pair {0, 1} into the map
+
+## Exercise 11.25
+
+> Contrast the following program with the one in the previous exercise
+```cpp
+vector<int> v; 
+v[0] = 1;
+``` 
+
+if index 0 exist in v, change its value to 1, if not, fatal error.
+
+## Exercise 11.26
+
+> What type can be used to subscript a `map`? What type does the subscript operator return? Give a concrete example—that is, define a `map` and then write the types that can be used to subscript the `map` and the type that would be returned from the subscript operator.
+
+any type can be used to subscript a `map`
+
+it returns the `map`'s mapped_type
+
+[code](ex11_26.cpp)
+(need review!)
+
+## Exercise 11.27
+
+> What kinds of problems would you use `count` to solve? When might you use `find` instead?
+
+For the containers that can hold only unique keys, it probably doesn’t matter whether we use `find` or `count`. However, for the containers with multiple keys, `count` has to do more work: If the element is present, it still has to `count` how many elements have the same key. If we don’t need the count, it’s best to use `find`
+
+## Exercise 11.28
+
+> Define and initialize a variable to hold the result of calling `find` on a `map` from `string` to `vector` of `int`.
+
+```cpp
+map<string, vector<int>> m;
+map<string, vector<int>>::iterator iter = m.find(...);
+```
+
+
+## Exercise 11.29
+
+> What do `upper_bound`, `lower_bound`, and `equal_range` return when you pass them a key that is not in the container?
+
+Both will refer to the point at which this key can be inserted while maintaining the container order.
+
+## Exercise 11.30
+
+> Explain the meaning of the operand `pos.first->second` used in the output expression of the final program in this section.
+
+`pos` is a map iterator, `pos.first` get the key, second point to the value. 
+
+## Exercise 11.31
+
+> Write a program that defines a `multimap` of authors and their works. Use find to find an element in the `multimap` and `erase` that element. Be sure your program works correctly if the element you look for is not in the `map`.
+
+[code](ex11_31.cpp)
+
+## Exercise 11.32
+
+> Using the `multimap` from the previous exercise, write a program to print the list of authors and their works alphabetically.
+
+[code](ex11_32.cpp)

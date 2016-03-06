@@ -240,3 +240,30 @@ Both will refer to the point at which this key can be inserted while maintaining
 > Using the `multimap` from the previous exercise, write a program to print the list of authors and their works alphabetically.
 
 [code](ex11_32.cpp)
+
+## Exercise 11.33
+
+> Implement your own version of the word-transformation program.
+
+[code](ex11_33.cpp)
+
+## Exercise 11.34
+
+> What would happen if we used the subscript operator instead of `find` in the `transform` function?
+
+if the key is not exist, the subscript operator will create an item into map with that key.
+
+## Exercise 11.35
+
+> In `buildMap`, what effect, if any, would there be from rewriting
+```cpp
+trans_map[key] = value.substr(1); 
+as trans_map.insert({key, value.substr(1)})?
+```
+
+- use subscript operator: if a word does appear multiple times, our loops will put the __last__ corresponding phrase into trans_map
+- use insert: if a word does appear multiple times, our loops will put the __first__ corresponding phrase into trans_map
+
+## Exercise 11.36
+
+> Our program does no checking on the validity of either input file. In particular, it assumes that the rules in the transformation file are all sensible. What would happen if a line in that file has a key, one space, and then the end of the line? Predict the behavior and then check it against your version of the program.

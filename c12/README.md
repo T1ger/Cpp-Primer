@@ -147,3 +147,39 @@ double free. runtime error
 > Rewrite the first exercise to use a lambda (§ 10.3.2, p. 388) in place of the `end_connection` function.
 
 [code](ex12_15.cpp)
+
+## Exercise 12.16
+
+> Compilers don’t always give easy-to-understand error messages if we attempt to copy or assign a `unique_ptr`. Write a program that contains these errors to see how your compiler diagnoses them.
+
+[code](ex12_16.cpp)
+
+## Exercise 12.17
+
+> Which of the following `unique_ptr` declarations are illegal or likely to result in subsequent program error? Explain what the problem is with each one.
+```cpp
+int ix = 1024, *pi = &ix, *pi2 = new int(2048); 
+typedef unique_ptr<int> IntP;
+```
+
+(a) `IntP p0(ix);`
+
+(b) `IntP p1(pi);`
+
+(c) `IntP p2(pi2);`
+
+(d) `IntP p3(&ix);`
+
+(e) `IntP p4(new int(2048));`
+
+(f) `IntP p5(p2.get());`
+
+[code](ex12_17.cpp)
+
+need review
+
+## Exercise 12.18
+
+> Why doesn’t `shared_ptr` have a release member?
+
+Other `shared_ptr` that points the same object can still delete this object
